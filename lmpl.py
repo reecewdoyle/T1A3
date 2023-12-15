@@ -1,4 +1,4 @@
-# Lake Macquarie Premier League App
+from lmpl_functions import print_this_round, print_round, team_draw, game_results
 
 # App Greeting
 print("Welcome to the Lake Macquarie Premier League App for 23/24!")
@@ -19,13 +19,13 @@ while users_choice != "5":
     users_choice = create_menu()
     print(users_choice)
     if (users_choice == "1"):
-        print("You entered 1")
+        print_this_round()
     elif (users_choice == "2"):
-        print("You entered 2")
+        print_round()
     elif (users_choice == "3"):
-        print("You entered 3")
+        team_draw()
     elif (users_choice == "4"):
-        print("You entered 4")
+        game_results()
     elif (users_choice == "5"):
         continue
     else:
