@@ -1,6 +1,19 @@
 # Lake Macquarie Premier League App
 
-# Welcome to the Lake Macquarie Premier League App
+# App Greeting
+print("Welcome to the Lake Macquarie Premier League App for 23/24!")
+
+
+def create_menu():
+    print("1. Enter 1 to print the fixture for this week's round. ")
+    print("2. Enter 2 to print the fixture and results for a particular round. ")
+    print("3. Enter 3 to print the fixture for a specific team. ")
+    print("4. Enter 4 to enter the results from a game.  ")
+    print("5. Enter 5 to exit.")
+    choice = input(" Enter your selection: ")
+    return choice
+
+create_menu()
 
 # 1. Print fixture this round.
             # Game number, Home Team, Away Team, Oval, Time, Day, Date,
@@ -27,7 +40,7 @@
     # 13. Round 13
     # 14. Round 14
 
-# 2. Print fixture for a team
+# 3. Print fixture for a team
     # 1. Belmont Bandits
     # 2. Boolaroo Bulldogs
     # 3. Charlestown Cobras
@@ -37,8 +50,9 @@
     # 7. Swansea Silverbacks
     # 8. Warners Bay Wanderers
 
-# 3. Print League Table
-# 4. Enter Results
+# 4. Print League Table
+
+# 5. Enter Results
     # 1. Game number
         # Home Team Goals
         # Away Team Goals
