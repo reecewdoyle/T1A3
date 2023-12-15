@@ -13,7 +13,26 @@ def create_menu():
     choice = input(" Enter your selection: ")
     return choice
 
-create_menu()
+users_choice = ""
+
+while users_choice != "5":
+    users_choice = create_menu()
+    print(users_choice)
+    if (users_choice == "1"):
+        print("You entered 1")
+    elif (users_choice == "2"):
+        print("You entered 2")
+    elif (users_choice == "3"):
+        print("You entered 3")
+    elif (users_choice == "4"):
+        print("You entered 4")
+    elif (users_choice == "5"):
+        continue
+    else:
+        print("Invalid Input")
+
+print("Thank you for using the Lake Macquarie Premier League App!")
+
 
 # 1. Print fixture this round.
             # Game number, Home Team, Away Team, Oval, Time, Day, Date,
