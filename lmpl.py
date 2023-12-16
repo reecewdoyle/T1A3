@@ -1,32 +1,35 @@
-from lmpl_functions import print_this_round, print_round, team_draw, game_results
+from lmpl_functions import print_teams, print_this_round, print_round, team_draw, game_results
 
 # App Greeting
 print("Welcome to the Lake Macquarie Premier League App for 23/24!")
 
 
 def create_menu():
-    print("1. Enter 1 to print the fixture for this week's round. ")
-    print("2. Enter 2 to print the fixture and results for a particular round. ")
-    print("3. Enter 3 to print the fixture for a specific team. ")
-    print("4. Enter 4 to enter the results from a game.  ")
-    print("5. Enter 5 to exit.")
+    print("1. Enter 1 to print a list of this year's teams. ")
+    print("2. Enter 2 to print the fixture for this week's round. ")
+    print("3. Enter 3 to print the fixture and results for a particular round. ")
+    print("4. Enter 4 to print the fixture for a specific team. ")
+    print("5. Enter 5 to enter the results from a game.  ")
+    print("6. Enter 6 to exit.")
     choice = input(" Enter your selection: ")
     return choice
 
 users_choice = ""
 
-while users_choice != "5":
+while users_choice != "6":
     users_choice = create_menu()
     print(users_choice)
     if (users_choice == "1"):
-        print_this_round()
+        print_teams()
     elif (users_choice == "2"):
-        print_round()
+        print_this_round()
     elif (users_choice == "3"):
-        team_draw()
+        print_round()
     elif (users_choice == "4"):
-        game_results()
+        team_draw()
     elif (users_choice == "5"):
+        game_results()
+    elif (users_choice == "6"):
         continue
     else:
         print("Invalid Input")
