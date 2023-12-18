@@ -3,67 +3,54 @@
 2,1,Charlestown Cobras,Eleebana Eagles
 3,1,Glendale Guardians,Speers Point Spartans
 4,1,Swansea Silverbacks,Warners Bay Wanderers
-
 5,2,Boolaroo Bulldogs,Charlestown Cobras
 6,2,Eleebana Eagles,Glendale Guardians
 7,2,Speers Point Spartans,Swansea Silverbacks
 8,2,Warners Bay Wanderers,Belmont Bandits
-
 9,3,Belmont Bandits,Charlestown Cobras
 10,3,Boolaroo Bulldogs,Eleebana Eagles
 11,3,Glendale Guardians,Swansea Silverbacks
 12,3,Speers Point Spartans,Warners Bay Wanderers
-
 13,4,Charlestown Cobras,Glendale Guardians
 14,4,Eleebana Eagles,Speers Point Spartans
 15,4,Swansea Silverbacks,Belmont Bandits
 16,4,Warners Bay Wanderers,Boolaroo Bulldogs
-
 17,5,Belmont Bandits,Eleebana Eagles
 18,5,Boolaroo Bulldogs,Glendale Guardians
 19,5,Charlestown Cobras,Swansea Silverbacks
 20,5,Warners Bay Wanderers,Speers Point Spartans
-
 21,6,Belmont Bandits,Glendale Guardians
 22,6,Boolaroo Bulldogs,Speers Point Spartans
 23,6,Charlestown Cobras,Warners Bay Wanderers
 24,6,Eleebana Eagles,Swansea Silverbacks
-
 25,7,Belmont Bandits,Swansea Silverbacks
 26,7,Charlestown Cobras,Warners Bay Wanderers
 27,7,Eleebana Eagles,Boolaroo Bulldogs
 28,7,Glendale Guardians,Speers Point Spartans
-
 29,8,Belmont Bandits,Speers Point Spartans
 30,8,Boolaroo Bulldogs,Swansea Silverbacks
 31,8,Eleebana Eagles,Warners Bay Wanderers
 32,8,Glendale Guardians,Charlestown Cobras
-
 33,9,Belmont Bandits,Warners Bay Wanderers
 34,9,Boolaroo Bulldogs,Charlestown Cobras
 35,9,Glendale Guardians,Eleebana Eagles
 36,9,Speers Point Spartans,Swansea Silverbacks
-
 37,10,Belmont Bandits,Boolaroo Bulldogs
 38,10,Charlestown Cobras,Eleebana Eagles
 39,10,Glendale Guardians,Speers Point Spartans
 40,10,Swansea Silverbacks,Warners Bay Wanderers
-
 41,11,Boolaroo Bulldogs,Charlestown Cobras
 42,11,Eleebana Eagles,Glendale Guardians
 43,11,Speers Point Spartans,Swansea Silverbacks
 44,11,Warners Bay Wanderers,Belmont Bandits
-
 45,12,Belmont Bandits,Charlestown Cobras
 46,12,Boolaroo Bulldogs,Eleebana Eagles
 47,12,Glendale Guardians,Swansea Silverbacks
 48,12,Speers Point Spartans,Warners Bay Wanderers
-
 49,13,Charlestown Cobras,Glendale Guardians
 50,13,Eleebana Eagles,Speers Point Spartans
 51,13,Swansea Silverbacks,Belmont Bandits
 52,13,Warners Bay Wanderers,Boolaroo Bulldogs
-
 53,14,Belmont Bandits,Eleebana Eagles
 54,14,Boolaroo Bulldogs,Glendale Guardians
 55,14,Charlestown Cobras,Swansea Silverbacks

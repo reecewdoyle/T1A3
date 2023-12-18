@@ -1,7 +1,7 @@
 from lmpl_functions import print_teams, print_this_round, print_round, team_draw, game_results
 
 # App Greeting
-print("Welcome to the Lake Macquarie Premier League App for 23/24!")
+print("\n""Welcome to the Lake Macquarie Premier League App for 23/24!""\n")
 
 
 def create_menu():
