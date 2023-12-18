@@ -21,9 +21,14 @@ def print_round():
         reader = csv.reader(f)
         round = input("Enter the round (1-14) you'd like to print: ""\n")
         for row in reader:
-            if row[1] == round:    
-                print("Round " + row[1] + ","" " +row[2] + " " + "vs" + " " + row[3])
-                print("\n")
+            if row[0] == round:    
+                print("\n" "Round " + row[0] + "," + " " + "Game" + " " + row[1] + "," + " " + row[2] + " " + "vs" + " " + row[3] + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + " " + row[7] + " " + "-" + " " + row[8])
+                if row[7] > row[8]:
+                    print("\n" + row[2] + " " + "Win!" "\n")
+                elif row[7] < row[8]:
+                    print("\n" + row[3] + " " "Win!" "\n")
+                elif row[7] == row[8]:
+                    print("\n" "Draw" "\n")
 # Enter the round (1-14) you'd like to see the results or fixtures for.
 # Print the results and fixtures. 
 
