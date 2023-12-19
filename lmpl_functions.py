@@ -59,12 +59,16 @@ def team_draw():
         team = int(input("Team Numner: "))
         teams_menu= ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
         team_draw = teams_menu[((team) - 1)]
+        print("\n")
+        print("This is the" + " " + team_draw + " " + "draw for this season.")
+        print("\n")
+
         for row in reader:
                 if row[3] == team_draw:    
                     print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4])
                 elif row[4] == team_draw:
                     print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4])
-        6
+        print("\n")
         # else:
         #     print("Invalid Input")
 
