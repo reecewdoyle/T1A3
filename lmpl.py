@@ -12,14 +12,14 @@ text = pyfiglet.print_figlet(text = "Lake Macquarie Premier League", font = "sta
 print(f"{fore('red')} {back('white')} Welcome to the Lake Macquarie Premier League App for 23/24!{attr('reset')}")
 
 def create_menu():
-    print(f"{fore('blue')} Enter 1 to view THIS YEAR'S TEAMS. {attr('reset')}")
+    print(f"{fore('blue')}Enter 1 to view THIS YEAR'S TEAMS. {attr('reset')}")
     print(f"{fore('blue')}Enter 2 to view THIS WEEK'S GAMES. {attr('reset')}")
     print(f"{fore('blue')}Enter 3 to view a ROUND. {attr('reset')}")
     print(f"{fore('blue')}Enter 4 to view a TEAM'S DRAW. {attr('reset')}")
     print(f"{fore('blue')}Enter 5 to ENTER the RESULTS from a game.  {attr('reset')}")
     print(f"{fore('blue')}Enter 6 to exit.")
     print("\n")
-    choice = input(f"{fore('red')} {back('white')} Enter your selection:{attr('reset')}")
+    choice = input(f"{fore('red')} {back('white')}Enter your selection:{attr('reset')}")
     return choice
 
 users_choice = ""
