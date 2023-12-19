@@ -11,9 +11,11 @@ def print_teams():
 
 def print_this_round():
     from datetime import date
-    my_date = datetime.date.today()                      # Show actual date
+    # Show actual date
+    my_date = datetime.date.today()
     print(my_date)
-    year, week_num, day_of_week = my_date.isocalendar()  # Using isocalendar() function
+    # Using isocalendar() function
+    year, week_num, day_of_week = my_date.isocalendar()
     print("Week #" + str(week_num))
     print("This week's games are: ")
     with open("lmpl.csv", "r") as f:
@@ -43,6 +45,8 @@ def print_round():
                     print("\n" + row[4] + " " "Win!" "\n")
                 elif row[8] == row[9]:
                     print("\n" "Draw" "\n")
+                
+
 # Enter the round (1-14) you'd like to see the results or fixtures for.
 # Print the results and fixtures. 
 
@@ -83,7 +87,12 @@ def team_draw():
 # Game data should include Round, Home Team, Away Team, Game Number, Field, Time, Date, Day of the week.
 
 def game_results():
-    print("Enter game results")
+    with open("lmpl.csv", "r") as f:
+        reader = csv.reader(f)
+        
+
+
+
 # Enter game number.
 # Enter Home Team
 # Enter Away Goals 
