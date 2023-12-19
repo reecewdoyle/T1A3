@@ -14,13 +14,17 @@ def print_this_round():
     my_date = datetime.date.today()                      # Show actual date
     print(my_date)
     year, week_num, day_of_week = my_date.isocalendar()  # Using isocalendar() function
-    print("Week #" + str(week_num)) # Showing week number
+    print("Week #" + str(week_num))
+    print("This week's games are: ")
     with open("lmpl.csv", "r") as f:
         reader = csv.reader(f)
         for row in reader:
             if row[0] == str(week_num):
                 print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
                 print("\n")
+            if week_num in range(6, 43):
+                print("No Games this week.")
+
 # Use a date and time extension to tell what date it is on the day the user is accessing the app.
 # Have the games for the rounds in a seperate csv file
 # Print only the games for the round this week
@@ -65,9 +69,9 @@ def team_draw():
 
         for row in reader:
                 if row[3] == team_draw:    
-                    print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4])
+                    print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
                 elif row[4] == team_draw:
-                    print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4])
+                    print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
         print("\n")
         # else:
         #     print("Invalid Input")
