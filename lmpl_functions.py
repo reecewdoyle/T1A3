@@ -18,10 +18,9 @@ def print_this_round():
     with open("lmpl.csv", "r") as f:
         reader = csv.reader(f)
         for row in reader:
-            if row[0] == week_num:
+            if row[0] == str(week_num):
                 print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
-        
-    
+                print("\n")
 # Use a date and time extension to tell what date it is on the day the user is accessing the app.
 # Have the games for the rounds in a seperate csv file
 # Print only the games for the round this week
