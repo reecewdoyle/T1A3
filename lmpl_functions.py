@@ -64,7 +64,7 @@ def team_draw():
                     print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4])
                 elif row[4] == team_draw:
                     print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4])
-
+        6
         # else:
         #     print("Invalid Input")
 

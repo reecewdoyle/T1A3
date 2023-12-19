@@ -7,12 +7,13 @@ print("\n""Welcome to the Lake Macquarie Premier League App for 23/24!""\n")
 
 
 def create_menu():
-    print("1. Enter 1 to print a list of this year's teams. ")
-    print("2. Enter 2 to print the fixture for this week's round. ")
-    print("3. Enter 3 to print the fixture and results for a particular round. ")
-    print("4. Enter 4 to print the fixture for a specific team. ")
-    print("5. Enter 5 to enter the results from a game.  ")
-    print("6. Enter 6 to exit.")
+    print("Enter 1 to view THIS YEAR'S TEAMS. ")
+    print("Enter 2 to view THIS WEEK'S GAMES. ")
+    print("Enter 3 to view a ROUND. ")
+    print("Enter 4 to view a TEAM'S DRAW. ")
+    print("Enter 5 to ENTER the RESULTS from a game.  ")
+    print("Enter 6 to exit.")
+    print("\n")
     choice = input(" Enter your selection: ")
     return choice
 
