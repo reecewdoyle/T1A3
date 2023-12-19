@@ -1,6 +1,6 @@
 import csv
 import datetime
-from datetime import date
+
 
 
 def print_teams():
@@ -10,26 +10,34 @@ def print_teams():
 # Print out the list of teams particiapting in the competition this year.
 
 def print_this_round():
-
-    print("Print this round")
+    from datetime import date
+    today = date.today()
+    print("Today is: ", today)
+    print("Day: ", today.day)
+    print("Month: ", today.month)
+    print("Year: ", today.year)
+    my_date = datetime.date.today()                      # Show actual date
+    print(my_date)
+    year, week_num, day_of_week = my_date.isocalendar()  # Using isocalendar() function
+    print("Week #" + str(week_num)) # Showing week number
     
 # Use a date and time extension to tell what date it is on the day the user is accessing the app.
 # Have the games for the rounds in a seperate csv file
 # Print only the games for the round this week
     
 def print_round():
-    
+
     with open("lmpl.csv", "r") as f:
         reader = csv.reader(f)
         round = input("Enter the round (1-14) you'd like to print: ""\n")
         for row in reader:
-            if row[0] == round:    
-                print("\n" "Round " + row[0] + "," + " " + "Game" + " " + row[1] + "," + " " + row[2] + " " + "vs" + " " + row[3] + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + " " + row[7] + " " + "-" + " " + row[8])
-                if row[7] > row[8]:
-                    print("\n" + row[2] + " " + "Win!" "\n")
-                elif row[7] < row[8]:
-                    print("\n" + row[3] + " " "Win!" "\n")
-                elif row[7] == row[8]:
+            if row[1] == round:    
+                print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + " " + row[8] + " " + "-" + " " + row[9])
+                if row[8] > row[9]:
+                    print("\n" + row[3] + " " + "Win!" "\n")
+                elif row[8] < row[9]:
+                    print("\n" + row[4] + " " "Win!" "\n")
+                elif row[8] == row[9]:
                     print("\n" "Draw" "\n")
 # Enter the round (1-14) you'd like to see the results or fixtures for.
 # Print the results and fixtures. 
@@ -52,10 +60,10 @@ def team_draw():
         teams_menu= ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
         team_draw = teams_menu[((team) - 1)]
         for row in reader:
-                if row[2] == team_draw:    
-                    print("Round " + row[1] + ","" " +row[2] + " " + "vs" + " " + row[3])
-                elif row[3] == team_draw:
-                    print("Round " + row[1] + ","" " +row[2] + " " + "vs" + " " + row[3])
+                if row[3] == team_draw:    
+                    print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4])
+                elif row[4] == team_draw:
+                    print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4])
 
         # else:
         #     print("Invalid Input")
