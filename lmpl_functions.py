@@ -1,5 +1,6 @@
 import csv
-
+import datetime
+from datetime import date
 
 
 def print_teams():
@@ -9,6 +10,7 @@ def print_teams():
 # Print out the list of teams particiapting in the competition this year.
 
 def print_this_round():
+
     print("Print this round")
     
 # Use a date and time extension to tell what date it is on the day the user is accessing the app.
@@ -16,7 +18,7 @@ def print_this_round():
 # Print only the games for the round this week
     
 def print_round():
-
+    
     with open("lmpl.csv", "r") as f:
         reader = csv.reader(f)
         round = input("Enter the round (1-14) you'd like to print: ""\n")
