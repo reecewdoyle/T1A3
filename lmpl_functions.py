@@ -11,15 +11,16 @@ def print_teams():
 
 def print_this_round():
     from datetime import date
-    today = date.today()
-    print("Today is: ", today)
-    print("Day: ", today.day)
-    print("Month: ", today.month)
-    print("Year: ", today.year)
     my_date = datetime.date.today()                      # Show actual date
     print(my_date)
     year, week_num, day_of_week = my_date.isocalendar()  # Using isocalendar() function
     print("Week #" + str(week_num)) # Showing week number
+    with open("lmpl.csv", "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if row[0] == week_num:
+                print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
+        
     
 # Use a date and time extension to tell what date it is on the day the user is accessing the app.
 # Have the games for the rounds in a seperate csv file
@@ -82,35 +83,4 @@ def game_results():
     print("Enter game results")
 # Enter game number.
 # Enter Home Team
-# Enter Away Goals
-
-
-# def select_team_draw():
-#     print("Enter the number that corresponds to the team you'd like to see the season draw for.")
-#     print("1. Belmont Bandits")
-#     print("2. Boolaroo Bulldogs")
-#     print("3. Charlestown Cobras")
-#     print("4. Eleebana Eagles")
-#     print("5. Glendale Guardians")
-#     print("6. Speers Point Spartans")
-#     print("7. Swansea Silverbacks")
-#     print("8. Warners Bay Wanderers")
-
-
-        # team_menu = int(input("Enter the number that corresponds to the team to see their draw: ""\n"))
-        # if team_menu == "1":
-        #     team_draw = input("Belmont Bandits")
-        # elif team_menu == "2":
-        #     team_draw = input("Boolaroo Bulldogs")
-        # elif team_menu == "3":
-        #     team_draw = input("Charlestown Cobras")
-        # elif team_menu == "4":
-        #     team_draw = input("Charlestown Cobras")
-        # elif team_menu == "5":
-        #     team_draw = input("Charlestown Cobras")
-        # elif team_menu == "6":
-        #     team_draw = input("Charlestown Cobras")
-        # elif team_menu == "7":
-        #     team_draw = input("Charlestown Cobras")
-        # elif team_menu == "8":
-        #     team_draw = input("Charlestown Cobras")    
+# Enter Away Goals 
