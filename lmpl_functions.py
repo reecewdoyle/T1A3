@@ -97,7 +97,7 @@ def enter_results(file_name):
     print("game results")
     with open(file_name, "a") as f:
     # Ask for game number
-        game_number =  input("Enter the Game Number: ")
+        game_number =  int(input("Enter the Game Number: "))
         home_team = input("Enter the Home Team: ")
         home_goals = input("Enter the Home Team Goals: ")
         away_team = input("Enter the Away Team: ")
@@ -108,5 +108,17 @@ def enter_results(file_name):
          
 def edit_results(file_name):
     pass
+
+
+
 def view_results(file_name):
-    pass
+    print("View Results")
+    from prettytable import from_csv
+    with open("results.csv") as f:
+        table = from_csv(f)
+    print(table)   
+    # with open(file_name, "r") as f:
+    #     reader = csv.reader(f)
+    #     for row in reader:
+    #         print(*row)
+
