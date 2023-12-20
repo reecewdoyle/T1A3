@@ -1,5 +1,5 @@
 from colored import fore, back, attr
-from lmpl_functions import print_teams, print_this_round, print_round, team_draw, game_results
+from lmpl_functions import print_teams, print_this_round, print_round, team_draw, enter_results, edit_results, view_results
 import pyfiglet
 import csv
 
@@ -32,14 +32,16 @@ def create_menu():
     print(f"{fore('blue')}Enter 3 to view a ROUND. {attr('reset')}")
     print(f"{fore('blue')}Enter 4 to view a TEAM'S DRAW. {attr('reset')}")
     print(f"{fore('blue')}Enter 5 to ENTER the RESULTS from a game.  {attr('reset')}")
-    print(f"{fore('blue')}Enter 6 to exit.")
+    print(f"{fore('blue')}Enter 6 to REMOVE the RESULTS from a game.  {attr('reset')}")
+    print(f"{fore('blue')}Enter 7 to VIEW the RESULTS.  {attr('reset')}")
+    print(f"{fore('blue')}Enter 8 to exit.")
     print("\n")
     choice = input(f"{fore('red')} {back('white')}Enter your selection:{attr('reset')}")
     return choice
 
 users_choice = ""
 
-while users_choice != "6":
+while users_choice != "8":
     users_choice = create_menu()
     print(users_choice)
     if (users_choice == "1"):
@@ -51,8 +53,12 @@ while users_choice != "6":
     elif (users_choice == "4"):
         team_draw()
     elif (users_choice == "5"):
-        game_results(file_name)
+        enter_results(file_name)
     elif (users_choice == "6"):
+        edit_results(file_name)
+    elif (users_choice == "7"):
+        view_results(file_name)
+    elif (users_choice == "8"):
         continue
     else:
         print("Invalid Input")

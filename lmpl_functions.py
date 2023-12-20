@@ -93,7 +93,7 @@ def team_draw():
 
 # file_name = "results.csv"
 
-def game_results(file_name):
+def enter_results(file_name):
     print("game results")
     with open(file_name, "a") as f:
     # Ask for game number
@@ -106,12 +106,7 @@ def game_results(file_name):
         writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
 
          
-    # Insert value into results.csv
-    # Ask for Home Team
-    # Insert value into results.csv
-    # Ask for Home Team Goals
-    # Insert value into results.csv
-    # Ask for Away Team
-    # Insert value into results.csv
-    # Ask for Away Team Goals
-    # Insert value into results.csv
+def edit_results(file_name):
+    pass
+def view_results(file_name):
+    pass
