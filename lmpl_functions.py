@@ -97,6 +97,7 @@ def enter_results(file_name):
     print("game results")
     with open(file_name, "a") as f:
     # Ask for game number
+        # game_round = int(input("Enter the Round of the game:"))
         game_number =  int(input("Enter the Game Number: "))
         home_team = input("Enter the Home Team: ")
         home_goals = input("Enter the Home Team Goals: ")
@@ -107,18 +108,47 @@ def enter_results(file_name):
 
          
 def edit_results(file_name):
-    pass
+    print("Remove results")
+    game_results = input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: ")
+    # copy all the conents of the csv into a new csv
+    # while doing this, we constantly check for the condition
+    # when we encounter the game results to be removed, we don't copy that one
+    # the final game result with be written in the csv file
+    games_list =[]
+    with open(file_name, "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if game_results != row[0]:
+                games_list.append(row)
+    with open(file_name, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(games_list)
+
+
+
+    
 
 
 
 def view_results(file_name):
-    print("View Results")
+    print("Here are the results from the season so far")
     from prettytable import from_csv
     with open("results.csv") as f:
         table = from_csv(f)
     print(table)   
+    
+
+
     # with open(file_name, "r") as f:
     #     reader = csv.reader(f)
+    #     reader.__next__()
     #     for row in reader:
     #         print(*row)
-
+    
+    
+    
+    
+    # from prettytable import from_csv
+    # with open("results.csv") as f:
+    #     mytable = from_csv(f)
+    # print(mytable)
