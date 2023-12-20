@@ -1,57 +1,57 @@
-﻿Week,Round,Game Number,Home Team,Away Team,Day,Date,Time,Home Team Goals,Away Team Goals
-44,1,1,Belmont Bandits,Boolaroo Bulldogs,Friday,3/11/23,18:00,5,0
-44,1,2,Charlestown Cobras,Eleebana Eagles,Saturday,4/11/23,12:00,2,2
-44,1,3,Glendale Guardians,Speers Point Spartans,Saturday,4/11/23,15:00,0,0
-44,1,4,Swansea Silverbacks,Warners Bay Wanderers,Sunday,5/11/23,14:00,3,1
-45,2,5,Boolaroo Bulldogs,Charlestown Cobras,Friday,10/11/23,18:00,2,3
-45,2,6,Eleebana Eagles,Glendale Guardians,Saturday,11/11/23,12:00,1,1
-45,2,7,Speers Point Spartans,Swansea Silverbacks,Saturday,11/11/23,15:00,0,4
-45,2,8,Warners Bay Wanderers,Belmont Bandits,Sunday,12/11/23,14:00,3,1
-46,3,9,Belmont Bandits,Charlestown Cobras,Friday,17/11/23,18:00,2,0
-46,3,10,Boolaroo Bulldogs,Eleebana Eagles,Saturday,18/11/23,12:00,1,2
-46,3,11,Glendale Guardians,Swansea Silverbacks,Sunday,19/11/23,14:00,4,2
-46,3,12,Speers Point Spartans,Warners Bay Wanderers,Friday,24/11/23,18:00,1,3
-47,4,13,Charlestown Cobras,Glendale Guardians,Friday,1/12/23,18:00,0,1
-47,4,14,Eleebana Eagles,Speers Point Spartans,Saturday,2/12/23,12:00,3,3
-47,4,15,Swansea Silverbacks,Belmont Bandits,Sunday,3/12/23,14:00,1,0
-47,4,16,Warners Bay Wanderers,Boolaroo Bulldogs,Friday,8/12/23,18:00,1,2
-48,5,17,Belmont Bandits,Eleebana Eagles,Friday,15/12/23,18:00,4,1
-48,5,18,Boolaroo Bulldogs,Glendale Guardians,Saturday,16/12/23,12:00,1,2
-48,5,19,Charlestown Cobras,Swansea Silverbacks,Sunday,17/12/23,14:00,2,2
-48,5,20,Warners Bay Wanderers,Speers Point Spartans,Friday,22/12/23,18:00,0,1
-49,6,21,Belmont Bandits,Glendale Guardians,Friday,29/12/23,18:00,3,0
-49,6,22,Boolaroo Bulldogs,Speers Point Spartans,Saturday,30/12/23,12:00,2,3
-49,6,23,Charlestown Cobras,Warners Bay Wanderers,Sunday,31/12/23,14:00,1,4
-49,6,24,Eleebana Eagles,Swansea Silverbacks,Friday,5/1/24,18:00,1,2
-50,7,25,Belmont Bandits,Swansea Silverbacks,Friday,12/1/24,18:00,2,2
-50,7,26,Charlestown Cobras,Warners Bay Wanderers,Saturday,13/1/24,12:00,3,0
-50,7,27,Eleebana Eagles,Boolaroo Bulldogs,Saturday,13/1/24,15:00,1,3
-50,7,28,Glendale Guardians,Speers Point Spartans,Sunday,14/1/24,14:00,0,2
-51,8,29,Belmont Bandits,Speers Point Spartans,Friday,19/1/24,18:00
-51,8,30,Boolaroo Bulldogs,Swansea Silverbacks,Saturday,20/1/24,12:00
-51,8,31,Eleebana Eagles,Warners Bay Wanderers,Saturday,20/1/24,15:00
-51,8,32,Glendale Guardians,Charlestown Cobras,Sunday,21/1/24,14:00
-52,9,33,Belmont Bandits,Warners Bay Wanderers,Friday,26/1/24,18:00
-52,9,34,Boolaroo Bulldogs,Charlestown Cobras,Saturday,27/1/24,12:00
-52,9,35,Glendale Guardians,Eleebana Eagles,Saturday,27/1/24,15:00
-52,9,36,Speers Point Spartans,Swansea Silverbacks,Sunday,28/1/24,14:00
-1,10,37,Belmont Bandits,Boolaroo Bulldogs,Friday,2/2/24,18:00
-1,10,38,Charlestown Cobras,Eleebana Eagles,Saturday,3/2/24,12:00
-1,10,39,Glendale Guardians,Speers Point Spartans,Saturday,3/2/24,15:00
-1,10,40,Swansea Silverbacks,Warners Bay Wanderers,Sunday,4/2/24,14:00
-2,11,41,Boolaroo Bulldogs,Charlestown Cobras,Friday,9/2/24,18:00
-2,11,42,Eleebana Eagles,Glendale Guardians,Saturday,10/2/24,12:00
-2,11,43,Speers Point Spartans,Swansea Silverbacks,Saturday,10/2/24,15:00
-2,11,44,Warners Bay Wanderers,Belmont Bandits,Sunday,11/2/24,14:00
-3,12,45,Belmont Bandits,Charlestown Cobras,Friday,16/2/24,18:00
-3,12,46,Boolaroo Bulldogs,Eleebana Eagles,Saturday,17/2/24,12:00
-3,12,47,Glendale Guardians,Swansea Silverbacks,Saturday,17/2/24,15:00
-3,12,48,Speers Point Spartans,Warners Bay Wanderers,Sunday,18/2/24,14:00
-4,13,49,Charlestown Cobras,Glendale Guardians,Friday,23/2/24,18:00
-4,13,50,Eleebana Eagles,Speers Point Spartans,Saturday,24/2/24,12:00
-4,13,51,Swansea Silverbacks,Belmont Bandits,Saturday,24/2/24,15:00
-4,13,52,Warners Bay Wanderers,Boolaroo Bulldogs,Sunday,25/2/24,14:00
-5,14,53,Belmont Bandits,Eleebana Eagles,Friday,2/3/24,18:00
-5,14,54,Boolaroo Bulldogs,Glendale Guardians,Saturday,3/3/24,12:00
-5,14,55,Charlestown Cobras,Swansea Silverbacks,Saturday,3/3/24,15:00
-5,14,56,Warners Bay Wanderers,Speers Point Spartans,Sunday,4/3/24,14:00
+﻿Week,Round,Game Number,Home Team,Away Team,Day,Date,Time,Game Completed,Home Team Goals,Away Team Goals
+44,1,1,Belmont Bandits,Boolaroo Bulldogs,Friday,3/11/23,18:00,True,5,0
+44,1,2,Charlestown Cobras,Eleebana Eagles,Saturday,4/11/23,12:00,True,2,2
+44,1,3,Glendale Guardians,Speers Point Spartans,Saturday,4/11/23,15:00,True,0,0
+44,1,4,Swansea Silverbacks,Warners Bay Wanderers,Sunday,5/11/23,14:00,True,3,1
+45,2,5,Boolaroo Bulldogs,Charlestown Cobras,Friday,10/11/23,18:00,True,2,3
+45,2,6,Eleebana Eagles,Glendale Guardians,Saturday,11/11/23,12:00,True,1,1
+45,2,7,Speers Point Spartans,Swansea Silverbacks,Saturday,11/11/23,15:00,True,0,4
+45,2,8,Warners Bay Wanderers,Belmont Bandits,Sunday,12/11/23,14:00,True,3,1
+46,3,9,Belmont Bandits,Charlestown Cobras,Friday,17/11/23,18:00,True,2,0
+46,3,10,Boolaroo Bulldogs,Eleebana Eagles,Saturday,18/11/23,12:00,True,1,2
+46,3,11,Glendale Guardians,Swansea Silverbacks,Sunday,19/11/23,14:00,True,4,2
+46,3,12,Speers Point Spartans,Warners Bay Wanderers,Friday,24/11/23,18:00,True,1,3
+47,4,13,Charlestown Cobras,Glendale Guardians,Friday,1/12/23,18:00,True,0,1
+47,4,14,Eleebana Eagles,Speers Point Spartans,Saturday,2/12/23,12:00,True,3,3
+47,4,15,Swansea Silverbacks,Belmont Bandits,Sunday,3/12/23,14:00,True,1,0
+47,4,16,Warners Bay Wanderers,Boolaroo Bulldogs,Friday,8/12/23,18:00,True,1,2
+48,5,17,Belmont Bandits,Eleebana Eagles,Friday,15/12/23,18:00,True,4,1
+48,5,18,Boolaroo Bulldogs,Glendale Guardians,Saturday,16/12/23,12:00,True,1,2
+48,5,19,Charlestown Cobras,Swansea Silverbacks,Sunday,17/12/23,14:00,True,2,2
+48,5,20,Warners Bay Wanderers,Speers Point Spartans,Friday,22/12/23,18:00,True,0,1
+49,6,21,Belmont Bandits,Glendale Guardians,Friday,29/12/23,18:00,True,3,0
+49,6,22,Boolaroo Bulldogs,Speers Point Spartans,Saturday,30/12/23,12:00,True,2,3
+49,6,23,Charlestown Cobras,Warners Bay Wanderers,Sunday,31/12/23,14:00,True,1,4
+49,6,24,Eleebana Eagles,Swansea Silverbacks,Friday,5/1/24,18:00,True,1,2
+50,7,25,Belmont Bandits,Swansea Silverbacks,Friday,12/1/24,18:00,True,2,2
+50,7,26,Charlestown Cobras,Warners Bay Wanderers,Saturday,13/1/24,12:00,True,3,0
+50,7,27,Eleebana Eagles,Boolaroo Bulldogs,Saturday,13/1/24,15:00,True,1,3
+50,7,28,Glendale Guardians,Speers Point Spartans,Sunday,14/1/24,14:00,True,0,2
+51,8,29,Belmont Bandits,Speers Point Spartans,Friday,19/1/24,18:00,False
+51,8,30,Boolaroo Bulldogs,Swansea Silverbacks,Saturday,20/1/24,12:00,False
+51,8,31,Eleebana Eagles,Warners Bay Wanderers,Saturday,20/1/24,15:00,False
+51,8,32,Glendale Guardians,Charlestown Cobras,Sunday,21/1/24,14:00,False
+52,9,33,Belmont Bandits,Warners Bay Wanderers,Friday,26/1/24,18:00,False
+52,9,34,Boolaroo Bulldogs,Charlestown Cobras,Saturday,27/1/24,12:00,False
+52,9,35,Glendale Guardians,Eleebana Eagles,Saturday,27/1/24,15:00,False
+52,9,36,Speers Point Spartans,Swansea Silverbacks,Sunday,28/1/24,14:00,False
+1,10,37,Belmont Bandits,Boolaroo Bulldogs,Friday,2/2/24,18:00,False
+1,10,38,Charlestown Cobras,Eleebana Eagles,Saturday,3/2/24,12:00,False
+1,10,39,Glendale Guardians,Speers Point Spartans,Saturday,3/2/24,15:00,False
+1,10,40,Swansea Silverbacks,Warners Bay Wanderers,Sunday,4/2/24,14:00,False
+2,11,41,Boolaroo Bulldogs,Charlestown Cobras,Friday,9/2/24,18:00,False
+2,11,42,Eleebana Eagles,Glendale Guardians,Saturday,10/2/24,12:00,False
+2,11,43,Speers Point Spartans,Swansea Silverbacks,Saturday,10/2/24,15:00,False
+2,11,44,Warners Bay Wanderers,Belmont Bandits,Sunday,11/2/24,14:00,False
+3,12,45,Belmont Bandits,Charlestown Cobras,Friday,16/2/24,18:00,False
+3,12,46,Boolaroo Bulldogs,Eleebana Eagles,Saturday,17/2/24,12:00,False
+3,12,47,Glendale Guardians,Swansea Silverbacks,Saturday,17/2/24,15:00,False
+3,12,48,Speers Point Spartans,Warners Bay Wanderers,Sunday,18/2/24,14:00,False
+4,13,49,Charlestown Cobras,Glendale Guardians,Friday,23/2/24,18:00,False
+4,13,50,Eleebana Eagles,Speers Point Spartans,Saturday,24/2/24,12:00,False
+4,13,51,Swansea Silverbacks,Belmont Bandits,Saturday,24/2/24,15:00,False
+4,13,52,Warners Bay Wanderers,Boolaroo Bulldogs,Sunday,25/2/24,14:00,False
+5,14,53,Belmont Bandits,Eleebana Eagles,Friday,2/3/24,18:00,False
+5,14,54,Boolaroo Bulldogs,Glendale Guardians,Saturday,3/3/24,12:00,False
+5,14,55,Charlestown Cobras,Swansea Silverbacks,Saturday,3/3/24,15:00,False
+5,14,56,Warners Bay Wanderers,Speers Point Spartans,Sunday,4/3/24,14:00,False
