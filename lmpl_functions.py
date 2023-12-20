@@ -37,15 +37,18 @@ def print_round():
         reader = csv.reader(f)
         round = input("Enter the round (1-14) you'd like to print: ""\n")
         for row in reader:
-            if row[1] == round:    
-                print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + " " + row[8] + " " + "-" + " " + row[9])
-                if row[8] > row[9]:
-                    print("\n" + row[3] + " " + "Win!" "\n")
-                elif row[8] < row[9]:
-                    print("\n" + row[4] + " " "Win!" "\n")
-                elif row[8] == row[9]:
-                    print("\n" "Draw" "\n")
-                
+            if row[1] == round:                   
+                    # print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + " " + row[9] + " " + "-" + " " + row[10])
+                    print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
+                    # if row[8] == True:
+                    print(row[9] + " " + "-" + " " + row[10])
+                    if row[9] > row[10]:
+                        print("\n" + row[3] + " " + "Win!" "\n")
+                    elif row[9] < row[10]:
+                        print("\n" + row[4] + " " "Win!" "\n")
+                    elif row[9] == row[10]:
+                            print("\n" "Draw" "\n")
+                    # if row[8] == False:                        print("Game hasn't been played yet")
 
 # Enter the round (1-14) you'd like to see the results or fixtures for.
 # Print the results and fixtures. 
