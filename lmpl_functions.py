@@ -161,20 +161,20 @@ def team_draw():
 
 
 def enter_results(file_name):
-    print("Enter the Results of a game.")
+    print("game results")
     with open(file_name, "a") as f:
     # Ask for game number
         # game_round = int(input("Enter the Round of the game:"))
-        game_number =  int(input("Enter the Game Number the name of the Home team exactly as you see it below:"))
-        print(f"{teams[0]}")
-        print(f"{teams[1]}")
-        print(f"{teams[2]}")
-        print(f"{teams[3]}")
-        print(f"{teams[4]}")
-        print(f"{teams[5]}")
-        print(f"{teams[6]}")
-        print(f"{teams[7]}")
-        home_team = input("Enter the Home Team: ")
+        game_number =  int(input("Enter the Game Number: "))
+        print(f"1. {teams[0]}")
+        print(f"2. {teams[1]}")
+        print(f"3. {teams[2]}")
+        print(f"4. {teams[3]}")
+        print(f"5. {teams[4]}")
+        print(f"6. {teams[5]}")
+        print(f"7. {teams[6]}")
+        print(f"8. {teams[7]}")
+        home_team = input("\nEnter the Home Team: ")
         home_goals = int(input("Enter the Home Team Goals: "))
         away_team = input("Enter the Away Team: ")
         away_goals = int(input("Enter the Away Team Goals: "))
