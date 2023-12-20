@@ -9,14 +9,17 @@ teams = [f"{fore('white')}{back('red')}Belmont Bandits{attr('reset')}",
          f"{fore('white')}{back('172')}Speers Point Spartans{attr('reset')}", 
          f"{fore('white')}{back('22')}Swansea Silverbacks{attr('reset')}", 
          f"{fore('white')}{back('13')}Warners Bay Wanderers{attr('reset')}"]
+
 # ************************************************************************************************************************************************************************************************
 # 1. - THIS YEAR'S TEAMS
 # ************************************************************************************************************************************************************************************************
 
-def print_teams():
-    print("\n""Congratulations to the following teams who've won selection in the Lake Macquiare Premier Leauge for the 23/24 season: ")
-    print(*teams, sep="\n")
 # Print out the list of teams particiapting in the competition this year.
+
+def print_teams():
+    print("\n""Congratulations to the following teams who've won selection in the Lake Macquiare Premier Leauge for the 23/24 season: \n")
+    print(*teams, sep="\n")
+    print("\n")
 
 # ************************************************************************************************************************************************************************************************
 # 2 - THIS WEEK'S GAMES
@@ -50,17 +53,47 @@ def print_this_round():
 # 3.  SELECT A ROUND TO VIEW
 # ************************************************************************************************************************************************************************************************
 
+    # try:
 
 def print_round():
-
+    print("There are 14 rounds in the LMPL Competition for this year. ""\n")
+    print("Each team plays each other twice, once and Home, and once Away. ""\n")
+    
     with open("lmpl.csv", "r") as f:
-        reader = csv.reader(f)
-        round = int(input("Enter the round (1-14) you'd like to print: ""\n"))
-        print(f"These are the games is Round {round} \n")
-        for row in reader:                  
-            if row[1] == round:
-                    print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
-                    print("\n")
+            reader = csv.reader(f)
+            round = int(input("Enter the round (1-14) you'd like to print: ""\n"))
+            rounds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"]
+            round_selected = rounds[((round) - 1)]
+            print(f"These are the games is Round {round_selected} \n")
+
+            for row in reader:                  
+                if row[1] == round_selected:
+                        print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
+                        print("\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # with open("lmpl.csv", "r") as f:
+        #     reader = csv.reader(f)
+        #     round = input("Enter the round (1-14) you'd like to print: ""\n")
+        #     print(f"These are the games is Round {round} \n")
+        #     for row in reader:                  
+        #         if row[1] == round:
+        #                 print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
+        #                 print("\n")
+
+
+    # except:
             # else:
             #     print("Invalid Input")
 
@@ -99,7 +132,7 @@ def team_draw():
     with open("lmpl.csv", "r") as f:
         reader = csv.reader(f)
         team = int(input("Team Numner: "))
-        teams_menu= ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
+        teams_menu = ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
         team_draw = teams_menu[((team) - 1)]
         print("\n")
         print("This is the" + " " + team_draw + " " + "draw for this season.")
@@ -128,15 +161,23 @@ def team_draw():
 
 
 def enter_results(file_name):
-    print("game results")
+    print("Enter the Results of a game.")
     with open(file_name, "a") as f:
     # Ask for game number
         # game_round = int(input("Enter the Round of the game:"))
-        game_number =  int(input("Enter the Game Number: "))
+        game_number =  int(input("Enter the Game Number the name of the Home team exactly as you see it below:"))
+        print(f"{teams[0]}")
+        print(f"{teams[1]}")
+        print(f"{teams[2]}")
+        print(f"{teams[3]}")
+        print(f"{teams[4]}")
+        print(f"{teams[5]}")
+        print(f"{teams[6]}")
+        print(f"{teams[7]}")
         home_team = input("Enter the Home Team: ")
-        home_goals = input("Enter the Home Team Goals: ")
+        home_goals = int(input("Enter the Home Team Goals: "))
         away_team = input("Enter the Away Team: ")
-        away_goals = input("Enter the Away Team Goals: ")
+        away_goals = int(input("Enter the Away Team Goals: "))
         writer = csv.writer(f)
         writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
 
