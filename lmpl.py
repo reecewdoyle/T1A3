@@ -1,12 +1,40 @@
 from colored import fore, back, attr
 from lmpl_functions import print_teams, print_this_round, print_round, team_draw, game_results
 import pyfiglet
+import csv
 
 # App Greeting
 
 text = pyfiglet.print_figlet(text = "Lake Macquarie Premier League", font = "standard", colors = "red")
 
 print(f"{fore('red')} {back('white')} Welcome to the Lake Macquarie Premier League App for 23/24!{attr('reset')}")
+
+file_name = "results.csv"
+
+try:
+    # open the file in read mode
+    results = open(file_name, "r")
+    results.close()
+    print("In try block")
+    # if it throws an error, the file doesn't exist
+    # if no error, the files exists
+except:
+    # Now, we know the file doesn't exist
+    # Create a new file
+    results = open(file_name, "w")
+    results.write("Game#,Home Team,Home Goals,Away Team,Away Goals,")
+    results.close()
+    print("In except block")
+
+
+
+
+
+
+
+
+ 
+
 
 
 
