@@ -1,11 +1,19 @@
 import csv
 import datetime
+from colored import fore, back, attr
+teams = [f"{fore('white')}{back('red')}Belmont Bandits{attr('reset')}", 
+         f"{fore('white')}{back('blue')}Boolaroo Bulldogs{attr('reset')}", 
+         f"{fore('white')}{back('yellow')}Charlestown Cobras{attr('reset')}", 
+         f"{fore('white')}{back('131')}Eleebana Eagles{attr('reset')}", 
+         f"{fore('white')}{back('56')}Glendale Guardians{attr('reset')}", 
+         f"{fore('white')}{back('172')}Speers Point Spartans{attr('reset')}", 
+         f"{fore('white')}{back('22')}Swansea Silverbacks{attr('reset')}", 
+         f"{fore('white')}{back('13')}Warners Bay Wanderers{attr('reset')}"]
 # ************************************************************************************************************************************************************************************************
 # 1. - THIS YEAR'S TEAMS
 # ************************************************************************************************************************************************************************************************
 
 def print_teams():
-    teams = ["\n" "Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers" "\n"]
     print("\n""Congratulations to the following teams who've won selection in the Lake Macquiare Premier Leauge for the 23/24 season: ")
     print(*teams, sep="\n")
 # Print out the list of teams particiapting in the competition this year.
@@ -79,14 +87,14 @@ def print_round():
 
 
 def team_draw():
-    print("1. Belmont Bandits")
-    print("2. Boolaroo Bulldogs")
-    print("3. Charlestown Cobras")
-    print("4. Eleebana Eagles")
-    print("5. Glendale Guardians")
-    print("6. Speers Point Spartans")
-    print("7. Swansea Silverbacks")
-    print("8. Warners Bay Wanderers")
+    print(f"1. {teams[0]}")
+    print(f"2. {teams[1]}")
+    print(f"3. {teams[2]}")
+    print(f"4. {teams[3]}")
+    print(f"5. {teams[4]}")
+    print(f"6. {teams[5]}")
+    print(f"7. {teams[6]}")
+    print(f"8. {teams[7]}")
 
     with open("lmpl.csv", "r") as f:
         reader = csv.reader(f)
