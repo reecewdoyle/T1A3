@@ -36,20 +36,22 @@ def print_round():
     with open("lmpl.csv", "r") as f:
         reader = csv.reader(f)
         round = input("Enter the round (1-14) you'd like to print: ""\n")
-        for row in reader:
-            if row[1] == round:                   
-                    # print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + " " + row[9] + " " + "-" + " " + row[10])
-                    print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
+        print(f"These are the games is Round {round} \n")
+        for row in reader:                  
+            if row[1] == round:
+                    print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
+                    print("\n")
                     # if row[8] == True:
-                    print(row[9] + " " + "-" + " " + row[10])
-                    if row[9] > row[10]:
-                        print("\n" + row[3] + " " + "Win!" "\n")
-                    elif row[9] < row[10]:
-                        print("\n" + row[4] + " " "Win!" "\n")
-                    elif row[9] == row[10]:
-                            print("\n" "Draw" "\n")
+                    # print(row[9] + " " + "-" + " " + row[10])
+                    # if row[9] > row[10]:
+                    #     print("\n" + row[3] + " " + "Win!" "\n")
+                    # elif row[9] < row[10]:
+                    #     print("\n" + row[4] + " " "Win!" "\n")
+                    # elif row[9] == row[10]:
+                    #         print("\n" "Draw" "\n")
                     # if row[8] == False:                        print("Game hasn't been played yet")
 
+                    # print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + " " + row[9] + " " + "-" + " " + row[10])
 # Enter the round (1-14) you'd like to see the results or fixtures for.
 # Print the results and fixtures. 
 
@@ -89,13 +91,20 @@ def team_draw():
 # Print out only the row that features a match with the team name. Should always be 14 games total.
 # Game data should include Round, Home Team, Away Team, Game Number, Field, Time, Date, Day of the week.
 
+# file_name = "results.csv"
+
 def game_results(file_name):
     print("game results")
-    # Ask for game number
-    game_number =  input("Enter the game number: ")
     with open(file_name, "a") as f:
-         writer = csv.writer(f)
-         writer.writerow(game_number)
+    # Ask for game number
+        game_number =  input("Enter the Game Number: ")
+        home_team = input("Enter the Home Team: ")
+        home_goals = input("Enter the Home Team Goals: ")
+        away_team = input("Enter the Away Team: ")
+        away_goals = input("Enter the Away Team Goals: ")
+        writer = csv.writer(f)
+        writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
+
          
     # Insert value into results.csv
     # Ask for Home Team

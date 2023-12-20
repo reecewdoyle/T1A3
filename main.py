@@ -22,7 +22,7 @@ except FileNotFoundError:
     # Now, we know the file doesn't exist
     # Create a new file
     results = open(file_name, "w")
-    results.write("Game#,Home Team,Home Goals,Away Team,Away Goals,")
+    results.write("Game Number,Home Team,Home Goals,Away Team,Away Goals\n")
     results.close()
     print("In except block")
 
@@ -51,7 +51,7 @@ while users_choice != "6":
     elif (users_choice == "4"):
         team_draw()
     elif (users_choice == "5"):
-        game_results()
+        game_results(file_name)
     elif (users_choice == "6"):
         continue
     else:
