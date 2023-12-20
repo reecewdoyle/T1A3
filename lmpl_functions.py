@@ -89,13 +89,20 @@ def team_draw():
 # Print out only the row that features a match with the team name. Should always be 14 games total.
 # Game data should include Round, Home Team, Away Team, Game Number, Field, Time, Date, Day of the week.
 
-def game_results():
-    with open("lmpl.csv", "r") as f:
-        reader = csv.reader(f)
-        
-
-
-
-# Enter game number.
-# Enter Home Team
-# Enter Away Goals 
+def game_results(file_name):
+    print("game results")
+    # Ask for game number
+    game_number =  input("Enter the game number: ")
+    with open(file_name, "a") as f:
+         writer = csv.writer(f)
+         writer.writerow(game_number)
+         
+    # Insert value into results.csv
+    # Ask for Home Team
+    # Insert value into results.csv
+    # Ask for Home Team Goals
+    # Insert value into results.csv
+    # Ask for Away Team
+    # Insert value into results.csv
+    # Ask for Away Team Goals
+    # Insert value into results.csv

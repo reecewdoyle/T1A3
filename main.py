@@ -18,25 +18,13 @@ try:
     print("In try block")
     # if it throws an error, the file doesn't exist
     # if no error, the files exists
-except:
+except FileNotFoundError:
     # Now, we know the file doesn't exist
     # Create a new file
     results = open(file_name, "w")
     results.write("Game#,Home Team,Home Goals,Away Team,Away Goals,")
     results.close()
     print("In except block")
-
-
-
-
-
-
-
-
- 
-
-
-
 
 def create_menu():
     print(f"{fore('blue')}Enter 1 to view THIS YEAR'S TEAMS. {attr('reset')}")
