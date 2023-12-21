@@ -1,3 +1,5 @@
+from prettytable import from_csv
+from datetime import date
 import csv
 import datetime
 from colored import fore, back, attr
@@ -26,7 +28,6 @@ def print_teams():
 # ************************************************************************************************************************************************************************************************
 
 def print_this_round():
-    from datetime import date
     # Show actual date
     my_date = datetime.date.today()
     print(my_date)
@@ -54,21 +55,23 @@ def print_this_round():
 def print_round():
     print("There are 14 rounds in the LMPL Competition for this year. ""\n")
     print("Each team plays each other twice, once at Home, and once Away. ""\n")
-    try:   
-        with open("lmpl.csv", "r") as f:
-                reader = csv.reader(f)
-                round = int(input("Enter the round (1-14) you'd like to print: ""\n"))
-                rounds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"]
-                round_selected = rounds[((round) - 1)]
-                print(f"These are the games is Round {round_selected} \n")
-                for row in reader:                  
-                    if row[1] == round_selected:
-                            print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
-                            print("\n")
-    except IndexError:
-        print("Must be a number between 1 and 14")
-    except ValueError:
-         print("No text! Must be a number between 1 and 14")
+    round = 0
+    rounds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"]
+    while str(round) not in rounds:
+        try:   
+            with open("lmpl.csv", "r") as f:
+                    reader = csv.reader(f)
+                    round = int(input("Enter the round (1-14) you'd like to print: ""\n"))
+                    round_selected = rounds[((round) - 1)]
+                    print(f"These are the games is Round {round_selected} \n")
+                    for row in reader:                  
+                        if row[1] == round_selected:
+                                print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
+                                print("\n")
+        except IndexError:
+            print("Must be a number between 1 and 14")
+        except ValueError:
+            print("No text! Must be a number between 1 and 14")
 
 # ************************************************************************************************************************************************************************************************
 # 4 TEAM'S DRAW
@@ -76,32 +79,26 @@ def print_round():
 
 
 def team_draw():
-    print(f"1. {teams[0]}")
-    print(f"2. {teams[1]}")
-    print(f"3. {teams[2]}")
-    print(f"4. {teams[3]}")
-    print(f"5. {teams[4]}")
-    print(f"6. {teams[5]}")
-    print(f"7. {teams[6]}")
-    print(f"8. {teams[7]}")
-
-    try:
+    for _index, team  in enumerate(teams):
+        print(f"{_index + 1}. {team}")
+        team_selection = 0
+    teams_menu = ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
+    while team_selection not in teams_menu:
+        try:
             with open("lmpl.csv", "r") as f:
                 reader = csv.reader(f)
-                team = int(input("Team Numner: "))
-                teams_menu = ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
-                team_draw = teams_menu[((team) - 1)]
-                print("\n")
-                print("This is the" + " " + team_draw + " " + "draw for this season.")
-                print("\n")
-
+                team_selection = int(input("Team Number: "))
+                team_draw = teams_menu[((team_selection) - 1)]
+                if(team_selection not in range(1,9)):
+                        raise ValueError
+                print("\nThis is the" + " " + team_draw + " " + "draw for this season.\n")
                 for row in reader:
                         if row[3] == team_draw:    
                             print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
                         elif row[4] == team_draw:
                             print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
-                            print("\n")
-    except: ValueError,print("Must be a number between 1 and 8 which corresponds to to the team.")
+            team_selection = teams_menu[team_selection]
+        except: ValueError,print("Must be a number between 1 and 8 which corresponds to to the team.")
 
 
 
@@ -237,7 +234,6 @@ def edit_results(file_name):
 
 def view_results(file_name):
     print("Here are the results from the season so far")
-    from prettytable import from_csv
     with open("results.csv") as f:
         table = from_csv(f)
     print(table)   
