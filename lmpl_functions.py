@@ -25,7 +25,6 @@ def print_teams():
 # 2 - THIS WEEK'S GAMES
 # ************************************************************************************************************************************************************************************************
 
-
 def print_this_round():
     from datetime import date
     # Show actual date
@@ -44,7 +43,6 @@ def print_this_round():
             if week_num in range(6, 43):
                 print("No Games this week.")
 
-
 # Use a date and time extension to tell what date it is on the day the user is accessing the app.
 # Have the games for the rounds in a seperate csv file
 # Print only the games for the round this week
@@ -52,8 +50,6 @@ def print_this_round():
 # ************************************************************************************************************************************************************************************************
 # 3.  SELECT A ROUND TO VIEW
 # ************************************************************************************************************************************************************************************************
-
-    # try:
 
 def print_round():
     print("There are 14 rounds in the LMPL Competition for this year. ""\n")
@@ -73,39 +69,6 @@ def print_round():
         print("Must be a number between 1 and 14")
     except ValueError:
          print("No text! Must be a number between 1 and 14")
-
-
-
-        # with open("lmpl.csv", "r") as f:
-        #     reader = csv.reader(f)
-        #     round = input("Enter the round (1-14) you'd like to print: ""\n")
-        #     print(f"These are the games is Round {round} \n")
-        #     for row in reader:                  
-        #         if row[1] == round:
-        #                 print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
-        #                 print("\n")
-
-
-    # except:
-            # else:
-            #     print("Invalid Input")
-
-
-
-
-                    # if row[8] == True:
-                    # print(row[9] + " " + "-" + " " + row[10])
-                    # if row[9] > row[10]:
-                    #     print("\n" + row[3] + " " + "Win!" "\n")
-                    # elif row[9] < row[10]:
-                    #     print("\n" + row[4] + " " "Win!" "\n")
-                    # elif row[9] == row[10]:
-                    #         print("\n" "Draw" "\n")
-                    # if row[8] == False:                        print("Game hasn't been played yet")
-
-                    # print("\n" "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + " " + row[9] + " " + "-" + " " + row[10])
-# Enter the round (1-14) you'd like to see the results or fixtures for.
-# Print the results and fixtures. 
 
 # ************************************************************************************************************************************************************************************************
 # 4 TEAM'S DRAW
@@ -141,12 +104,10 @@ def team_draw():
     except: ValueError,print("Must be a number between 1 and 8 which corresponds to to the team.")
 
 
-    # print("Team draw view")
+
 # Ask for name of the team
 # Print out only the row that features a match with the team name. Should always be 14 games total.
 # Game data should include Round, Home Team, Away Team, Game Number, Field, Time, Date, Day of the week.
-
-# file_name = "results.csv"
 
 # ************************************************************************************************************************************************************************************************
 # 5 - ENTER RESULTS
@@ -172,7 +133,7 @@ def enter_results(file_name):
             print(f"{team}")
         home_team = input("\nEnter the Home Team: ")
 
-        home_goals = 0  # Initializing with an invalid value to enter the loop
+        home_goals = 0  
         while True:    
             try:
                 home_goals = int(input("Enter the Home Goals: "))
@@ -186,7 +147,7 @@ def enter_results(file_name):
         away_team = input("\nEnter the Away Team: ")
 
 
-        away_goals = 0  # Initializing with an invalid value to enter the loop
+        away_goals = 0  
         while True:    
             try:
                 away_goals = int(input("Enter the Away Goals: "))
