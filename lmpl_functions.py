@@ -17,7 +17,7 @@ teams = [f"{fore('white')}{back('red')}Belmont Bandits{attr('reset')}",
 # Print out the list of teams particiapting in the competition this year.
 
 def print_teams():
-    print("\n""Congratulations to the following teams who've won selection in the Lake Macquiare Premier Leauge for the 23/24 season: \n")
+    print("\n""Congratulations to the following teams who've won selection in the Lake Macquarie Premier League for the 23/24 season: \n")
     print(*teams, sep="\n")
     print("\n")
 
@@ -57,29 +57,22 @@ def print_this_round():
 
 def print_round():
     print("There are 14 rounds in the LMPL Competition for this year. ""\n")
-    print("Each team plays each other twice, once and Home, and once Away. ""\n")
-    
-    with open("lmpl.csv", "r") as f:
-            reader = csv.reader(f)
-            round = int(input("Enter the round (1-14) you'd like to print: ""\n"))
-            rounds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"]
-            round_selected = rounds[((round) - 1)]
-            print(f"These are the games is Round {round_selected} \n")
-
-            for row in reader:                  
-                if row[1] == round_selected:
-                        print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
-                        print("\n")
-
-
-
-
-
-
-
-
-
-
+    print("Each team plays each other twice, once at Home, and once Away. ""\n")
+    try:   
+        with open("lmpl.csv", "r") as f:
+                reader = csv.reader(f)
+                round = int(input("Enter the round (1-14) you'd like to print: ""\n"))
+                rounds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"]
+                round_selected = rounds[((round) - 1)]
+                print(f"These are the games is Round {round_selected} \n")
+                for row in reader:                  
+                    if row[1] == round_selected:
+                            print( "Round " + row[1] + "," + " " + "Game" + " " + row[2] + "," + " " + row[3] + " " + "vs" + " " + row[4] + " " + row[5] + "," + " " + row[6] + "," + " " + row[7])
+                            print("\n")
+    except IndexError:
+        print("Must be a number between 1 and 14")
+    except ValueError:
+         print("No text! Must be a number between 1 and 14")
 
 
 
@@ -129,23 +122,23 @@ def team_draw():
     print(f"7. {teams[6]}")
     print(f"8. {teams[7]}")
 
-    with open("lmpl.csv", "r") as f:
-        reader = csv.reader(f)
-        team = int(input("Team Numner: "))
-        teams_menu = ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
-        team_draw = teams_menu[((team) - 1)]
-        print("\n")
-        print("This is the" + " " + team_draw + " " + "draw for this season.")
-        print("\n")
+    try:
+            with open("lmpl.csv", "r") as f:
+                reader = csv.reader(f)
+                team = int(input("Team Numner: "))
+                teams_menu = ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
+                team_draw = teams_menu[((team) - 1)]
+                print("\n")
+                print("This is the" + " " + team_draw + " " + "draw for this season.")
+                print("\n")
 
-        for row in reader:
-                if row[3] == team_draw:    
-                    print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
-                elif row[4] == team_draw:
-                    print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
-        print("\n")
-        # else:
-        #     print("Invalid Input")
+                for row in reader:
+                        if row[3] == team_draw:    
+                            print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
+                        elif row[4] == team_draw:
+                            print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
+                            print("\n")
+    except: ValueError,print("Must be a number between 1 and 8 which corresponds to to the team.")
 
 
     # print("Team draw view")
@@ -161,11 +154,20 @@ def team_draw():
 
 
 def enter_results(file_name):
-    print("game results")
+    print("Let's enter the results of a game!")
     with open(file_name, "a") as f:
-    # Ask for game number
-        # game_round = int(input("Enter the Round of the game:"))
-        game_number =  int(input("Enter the Game Number: "))
+            
+        try:    
+            game_number = 0
+            game_number =  int(input("Enter the Game Number: "))
+            if game_number >= 57:
+                print("Must be a number between 1 and 56")
+                return
+        except ValueError:
+            print("Must be a number between 1 and 56")
+            return
+
+
         print(f"1. {teams[0]}")
         print(f"2. {teams[1]}")
         print(f"3. {teams[2]}")
@@ -175,11 +177,34 @@ def enter_results(file_name):
         print(f"7. {teams[6]}")
         print(f"8. {teams[7]}")
         home_team = input("\nEnter the Home Team: ")
-        home_goals = int(input("Enter the Home Team Goals: "))
+        try:
+            home_goals = int(input("Enter the Home Team Goals: "))
+        except: ValueError, print("Must be a Number")
+       
+    
         away_team = input("Enter the Away Team: ")
         away_goals = int(input("Enter the Away Team Goals: "))
         writer = csv.writer(f)
         writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
+
+
+    # Ask for game number
+        # game_round = int(input("Enter the Round of the game:"))
+        # game_number = 0
+        # while 1 > game_number or 56 < game_number:
+        #     try:
+        #         game_number = int(input("Please enter your game number (1 - 56) : "))
+        #     except ValueError:
+        #         print("Must be a number between 1 and 56")
+
+
+        # try:
+        #     game_number = 0
+        #     while 1 > game_number or 56 < game_number:
+        #         game_number = int(input("Please enter your game number (1 - 56) : "))
+
+        # except ValueError:
+        #     print("Must be a number between 1 and 56")
 
 # ************************************************************************************************************************************************************************************************
 # 6
