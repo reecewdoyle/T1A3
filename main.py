@@ -55,9 +55,9 @@ while users_choice != "8":
     elif (users_choice == "5"):
         enter_results(file_name)
     elif (users_choice == "6"):
-        edit_results(file_name)
+        edit_results()
     elif (users_choice == "7"):
-        view_results(file_name)
+        view_results()
     elif (users_choice == "8"):
         continue
     else:

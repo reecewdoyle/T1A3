@@ -12,6 +12,7 @@ teams = [f"{fore('white')}{back('red')}Belmont Bandits{attr('reset')}",
          f"{fore('white')}{back('22')}Swansea Silverbacks{attr('reset')}", 
          f"{fore('white')}{back('13')}Warners Bay Wanderers{attr('reset')}"]
 
+file_name = "results.csv"
 # ************************************************************************************************************************************************************************************************
 # 1. - THIS YEAR'S TEAMS
 # ************************************************************************************************************************************************************************************************
@@ -203,36 +204,89 @@ def enter_results(file_name):
 # ************************************************************************************************************************************************************************************************
 
 
-         
-def edit_results(file_name):
-    print("Remove results")
-    try:
-        game_results = int(input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: "))
-    except ValueError:
-        print("Must be a number")
-        # copy all the contents of the csv into a new csv
-        # while doing this, we constantly check for the condition
-        # when we encounter the game results to be removed, we don't copy that one
-        # the final game result with be written in the csv file
-    try:    
-        games_list =[]
-        with open(file_name, "r") as f:
-            reader = csv.reader(f)
-            for row in reader:
-                if game_results != row[0]:
-                    games_list.append(row)
-        with open(file_name, "w") as f:
-            writer = csv.writer(f)
-            writer.writerows(games_list)
-    except UnboundLocalError:
-        print("Must be a number that corresponds with the Game Number for the Game you want to delete.")
+def edit_results():
+    game_results = ""
+    removed_result = ""
+    while(game_results != "0"):
+        view_results()
+        print("Remove results")
+        try:
+            games_list = []
+
+            game_results = input("Enter the GAME NUMBER for the RESULTS you want to REMOVE(enter 0 to return to main menu): ")
+            if(not game_results.isdigit()):
+                raise ValueError
+        except ValueError:
+            print("Must be a number")
+            # copy all the contents of the csv into a new csv
+            # while doing this, we constantly check for the condition
+            # when we encounter the game results to be removed, we don't copy that one
+            # the final game result with be written in the csv file
+        try:
+            current_game_numbers = []    
+            with open(file_name, "r") as f:
+                reader = csv.reader(f)
+                for row in reader:
+                    current_game_numbers.append(row[0])
+                    if game_results != row[0]:
+                        games_list.append(row)
+                    else:
+                        removed_result = row[0]
+            with open(file_name, "w") as f:
+                writer = csv.writer(f)
+                writer.writerows(games_list)
+            if(game_results not in current_game_numbers and game_results != "0"):
+                raise UnboundLocalError
+        except UnboundLocalError:
+            print("Must be a number that corresponds with the Game Number for the Game you want to delete.")
+
+# def edit_results(file_name):
+#     print("Remove results")
+#     game_results = input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: ")
+#     # copy all the conents of the csv into a new csv
+#     # while doing this, we constantly check for the condition
+#     # when we encounter the game results to be removed, we don't copy that one
+#     # the final game result with be written in the csv file
+#     games_list =[]
+#     with open(file_name, "r") as f:
+#         reader = csv.reader(f)
+#         for row in reader:
+#             if game_results != row[0]:
+#                 games_list.append(row)
+#     with open(file_name, "w") as f:
+#         writer = csv.writer(f)
+#         writer.writerows(games_list)
+        
+
+
+# def edit_results(file_name):
+#     try:
+#         game_results = int(input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: "))
+#     except ValueError:
+#         print("Must be a number")
+#         # copy all the contents of the csv into a new csv
+#         # while doing this, we constantly check for the condition
+#         # when we encounter the game results to be removed, we don't copy that one
+#         # the final game result with be written in the csv file
+#     try:    
+#         games_list =[]
+#         with open(file_name, "r") as f:
+#             reader = csv.reader(f)
+#             for row in reader:
+#                 if game_results != row[0]:
+#                     games_list.append(row)
+#         with open(file_name, "w") as f:
+#             writer = csv.writer(f)
+#             writer.writerows(games_list)
+#     except UnboundLocalError:
+#         print("Must be a number that corresponds with the Game Number for the Game you want to delete.")
 
 
 # ************************************************************************************************************************************************************************************************
 # 7 VIEW RESULTS
 # ************************************************************************************************************************************************************************************************
 
-def view_results(file_name):
+def view_results():
     print("Here are the results from the season so far")
     with open("results.csv") as f:
         table = from_csv(f)
