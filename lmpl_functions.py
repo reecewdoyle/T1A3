@@ -1,8 +1,8 @@
-from prettytable import from_csv
-from datetime import date
 import csv
 import datetime
 from colored import fore, back, attr
+from prettytable import from_csv
+file_name = "results.csv"
 teams = [f"{fore('white')}{back('red')}Belmont Bandits{attr('reset')}", 
          f"{fore('white')}{back('blue')}Boolaroo Bulldogs{attr('reset')}", 
          f"{fore('white')}{back('yellow')}Charlestown Cobras{attr('reset')}", 
@@ -12,7 +12,6 @@ teams = [f"{fore('white')}{back('red')}Belmont Bandits{attr('reset')}",
          f"{fore('white')}{back('22')}Swansea Silverbacks{attr('reset')}", 
          f"{fore('white')}{back('13')}Warners Bay Wanderers{attr('reset')}"]
 
-file_name = "results.csv"
 # ************************************************************************************************************************************************************************************************
 # 1. - THIS YEAR'S TEAMS
 # ************************************************************************************************************************************************************************************************
@@ -29,6 +28,7 @@ def print_teams():
 # ************************************************************************************************************************************************************************************************
 
 def print_this_round():
+    from datetime import date
     # Show actual date
     my_date = datetime.date.today()
     print(my_date)
@@ -60,9 +60,10 @@ def print_round():
     rounds = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"]
     while str(round) not in rounds:
         try:   
-            with open("lmpl.csv", "r") as f:
+            round = int(input("Enter the round (1-14) you'd like to print: ""\n"))
+            if (round in rounds):
+                with open("lmpl.csv", "r") as f:
                     reader = csv.reader(f)
-                    round = int(input("Enter the round (1-14) you'd like to print: ""\n"))
                     round_selected = rounds[((round) - 1)]
                     print(f"These are the games is Round {round_selected} \n")
                     for row in reader:                  
@@ -82,23 +83,26 @@ def print_round():
 def team_draw():
     for _index, team  in enumerate(teams):
         print(f"{_index + 1}. {team}")
-        team_selection = 0
+
+    team_selection = 0
     teams_menu = ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
     while team_selection not in teams_menu:
         try:
             with open("lmpl.csv", "r") as f:
                 reader = csv.reader(f)
                 team_selection = int(input("Team Number: "))
-                team_draw = teams_menu[((team_selection) - 1)]
                 if(team_selection not in range(1,9)):
-                        raise ValueError
-                print("\nThis is the" + " " + team_draw + " " + "draw for this season.\n")
+                    raise ValueError
+                team_draw = teams_menu[((team_selection) - 1)]
+                print("This is the" + " " + team_draw + " " + "draw for this season.")
                 for row in reader:
                         if row[3] == team_draw:    
                             print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
                         elif row[4] == team_draw:
                             print("Round " + row[1] + ","" " +row[3] + " " + "vs" + " " + row[4] + "," + " " + row[5] + "," + " " + row[6] + "," + " " + row[7] + "\n")
-            team_selection = teams_menu[team_selection]
+                
+                team_selection = teams_menu[team_selection]
+                            
         except: ValueError,print("Must be a number between 1 and 8 which corresponds to to the team.")
 
 
@@ -113,50 +117,54 @@ def team_draw():
 
 
 def enter_results(file_name):
+    view_results()
+
     print("Let's enter the results of a game!")
     with open(file_name, "a") as f:
-    
-        try:    
-            game_number = 0
-            game_number =  int(input("Enter the Game Number: "))
-            if game_number >= 57:
+        game_number = int
+        while((game_number != 0)):
+            try:    
+                game_number =  int(input("Enter the Game Number(enter 0 to return to main menu): "))
+                if game_number not in range(1,57):
+                    print("Must be a number between 1 and 56")
+                else:
+                    break
+            except ValueError:
                 print("Must be a number between 1 and 56")
-                return
-        except ValueError:
-            print("Must be a number between 1 and 56")
-            return
 
-        print("Type the name of the Home Team as you see it below.")
-        for team in teams:
-            print(f"{team}")
-        home_team = input("\nEnter the Home Team: ")
+        if(game_number != 0):
+            print("Type the name of the Home Team as you see it below.")
+            for team in teams:
+                print(f"{team}")
+            home_team = input("\nEnter the Home Team: ")
+                
 
-        home_goals = 0  
-        while True:    
-            try:
-                home_goals = int(input("Enter the Home Goals: "))
-                break
-            except ValueError:
-                print("Invalid input. Please enter an integer.")
-            
-        print("Type the name of the Away Team as you see it below.")
-        for team in teams:
-            print(f"{team}")
-        away_team = input("\nEnter the Away Team: ")
+            home_goals = 0  
+            while True:    
+                try:
+                    home_goals = int(input("Enter the Home Goals: "))
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter an integer.")
+                
+            print("Type the name of the Away Team as you see it below.")
+            for team in teams:
+                print(f"{team}")
+            away_team = input("\nEnter the Away Team: ")
 
 
-        away_goals = 0  
-        while True:    
-            try:
-                away_goals = int(input("Enter the Away Goals: "))
-                break
-            except ValueError:
-                print("Invalid input. Please enter an integer.")
+            away_goals = 0  
+            while True:    
+                try:
+                    away_goals = int(input("Enter the Away Goals: "))
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter an integer.")
 
 
-        writer = csv.writer(f)
-        writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
-        print("\nThank you! You can check your entry with option 7 on the main menu.\n")
+            writer = csv.writer(f)
+            writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
+            print("\nThank you! You can check your entry with option 7 on the main menu.\n")
    
    
    
@@ -203,7 +211,23 @@ def enter_results(file_name):
 # 6 REMOVE RESULTS
 # ************************************************************************************************************************************************************************************************
 
-
+# def edit_results():
+#     print("Remove results")
+#     game_results = input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: ")
+#     # copy all the conents of the csv into a new csv
+#     # while doing this, we constantly check for the condition
+#     # when we encounter the game results to be removed, we don't copy that one
+#     # the final game result with be written in the csv file
+#     games_list =[]
+#     with open(file_name, "r") as f:
+#         reader = csv.reader(f)
+#         for row in reader:
+#             if game_results != row[0]:
+#                 games_list.append(row)
+#     with open(file_name, "w") as f:
+#         writer = csv.writer(f)
+#         writer.writerows(games_list)
+         
 def edit_results():
     game_results = ""
     removed_result = ""
@@ -240,47 +264,6 @@ def edit_results():
         except UnboundLocalError:
             print("Must be a number that corresponds with the Game Number for the Game you want to delete.")
 
-# def edit_results(file_name):
-#     print("Remove results")
-#     game_results = input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: ")
-#     # copy all the conents of the csv into a new csv
-#     # while doing this, we constantly check for the condition
-#     # when we encounter the game results to be removed, we don't copy that one
-#     # the final game result with be written in the csv file
-#     games_list =[]
-#     with open(file_name, "r") as f:
-#         reader = csv.reader(f)
-#         for row in reader:
-#             if game_results != row[0]:
-#                 games_list.append(row)
-#     with open(file_name, "w") as f:
-#         writer = csv.writer(f)
-#         writer.writerows(games_list)
-        
-
-
-# def edit_results(file_name):
-#     try:
-#         game_results = int(input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: "))
-#     except ValueError:
-#         print("Must be a number")
-#         # copy all the contents of the csv into a new csv
-#         # while doing this, we constantly check for the condition
-#         # when we encounter the game results to be removed, we don't copy that one
-#         # the final game result with be written in the csv file
-#     try:    
-#         games_list =[]
-#         with open(file_name, "r") as f:
-#             reader = csv.reader(f)
-#             for row in reader:
-#                 if game_results != row[0]:
-#                     games_list.append(row)
-#         with open(file_name, "w") as f:
-#             writer = csv.writer(f)
-#             writer.writerows(games_list)
-#     except UnboundLocalError:
-#         print("Must be a number that corresponds with the Game Number for the Game you want to delete.")
-
 
 # ************************************************************************************************************************************************************************************************
 # 7 VIEW RESULTS
@@ -291,16 +274,6 @@ def view_results():
     with open("results.csv") as f:
         table = from_csv(f)
     print(table)   
-    
-
-
-    # with open(file_name, "r") as f:
-    #     reader = csv.reader(f)
-    #     reader.__next__()
-    #     for row in reader:
-    #         print(*row)
-    
-    
     
     
     # from prettytable import from_csv
