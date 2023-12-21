@@ -173,33 +173,35 @@ def enter_results(file_name):
         home_team = input("\nEnter the Home Team: ")
 
         home_goals = 0  # Initializing with an invalid value to enter the loop
-        while not (0 <= home_goals <= 99):
+        while True:    
             try:
-                home_goals = int(input("Enter a number between 1 and 99: "))
+                home_goals = int(input("Enter the Home Goals: "))
+                break
             except ValueError:
-                print("Invalid input. Please enter a valid integer.")
+                print("Invalid input. Please enter an integer.")
             
         print("Type the name of the Away Team as you see it below.")
         for team in teams:
             print(f"{team}")
-        away_team = input("\nEnter the Home Team: ")
+        away_team = input("\nEnter the Away Team: ")
 
 
         away_goals = 0  # Initializing with an invalid value to enter the loop
-        while not (0 <= away_goals <= 99):
+        while True:    
             try:
-                away_goals = int(input("Enter a number between 1 and 99: "))
+                away_goals = int(input("Enter the Away Goals: "))
+                break
             except ValueError:
-                print("Invalid input. Please enter a valid integer.")
+                print("Invalid input. Please enter an integer.")
 
 
-    writer = csv.writer(f)
-    writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
+        writer = csv.writer(f)
+        writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
+        print("\nThank you! You can check your entry with option 7 on the main menu.\n")
    
    
    
-   
-   
+
    
    
     # try:
