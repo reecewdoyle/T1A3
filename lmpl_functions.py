@@ -181,6 +181,7 @@ def enter_results(file_name):
         home_team = input("\nEnter the Home Team: ")
         home_goals = 0
         home_goals = int(input("Enter the Home Team Goals: "))
+        # raise Exception("Please enter numbers only")
     except: ValueError, print("Must be a Number")
         
     print(f"{teams[0]}")
