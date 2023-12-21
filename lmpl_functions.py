@@ -108,7 +108,7 @@ def print_round():
 # Print the results and fixtures. 
 
 # ************************************************************************************************************************************************************************************************
-# 4
+# 4 TEAM'S DRAW
 # ************************************************************************************************************************************************************************************************
 
 
@@ -149,7 +149,7 @@ def team_draw():
 # file_name = "results.csv"
 
 # ************************************************************************************************************************************************************************************************
-# 5
+# 5 - ENTER RESULTS
 # ************************************************************************************************************************************************************************************************
 
 
@@ -168,25 +168,40 @@ def enter_results(file_name):
             return
 
 
-        print(f"1. {teams[0]}")
-        print(f"2. {teams[1]}")
-        print(f"3. {teams[2]}")
-        print(f"4. {teams[3]}")
-        print(f"5. {teams[4]}")
-        print(f"6. {teams[5]}")
-        print(f"7. {teams[6]}")
-        print(f"8. {teams[7]}")
-        home_team = input("\nEnter the Home Team: ")
-        try:
-            home_goals = int(input("Enter the Home Team Goals: "))
-        except: ValueError, print("Must be a Number")
-       
-    
-        away_team = input("Enter the Away Team: ")
-        away_goals = int(input("Enter the Away Team Goals: "))
-        writer = csv.writer(f)
-        writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
+        print(f"{teams[0]}")
+        print(f"{teams[1]}")
+        print(f"{teams[2]}")
+        print(f"{teams[3]}")
+        print(f"{teams[4]}")
+        print(f"{teams[5]}")
+        print(f"{teams[6]}")
+        print(f"{teams[7]}")
 
+    try:
+        home_team = input("\nEnter the Home Team: ")
+        home_goals = 0
+        home_goals = int(input("Enter the Home Team Goals: "))
+    except: ValueError, print("Must be a Number")
+        
+    print(f"{teams[0]}")
+    print(f"{teams[1]}")
+    print(f"{teams[2]}")
+    print(f"{teams[3]}")
+    print(f"{teams[4]}")
+    print(f"{teams[5]}")
+    print(f"{teams[6]}")
+    print(f"{teams[7]}")
+    try:
+        away_team = input("Enter the Away Team: ")
+        away_goals = 0
+        away_goals = int(input("Enter the Away Team Goals: "))
+    except: ValueError
+    print("Must be a Number")
+    # try:
+    writer = csv.writer(f)
+    writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
+    # except Exception:
+    #     print("Something went wrong. Please try again")
 
     # Ask for game number
         # game_round = int(input("Enter the Round of the game:"))
@@ -207,31 +222,37 @@ def enter_results(file_name):
         #     print("Must be a number between 1 and 56")
 
 # ************************************************************************************************************************************************************************************************
-# 6
+# 6 REMOVE RESULTS
 # ************************************************************************************************************************************************************************************************
 
 
          
 def edit_results(file_name):
     print("Remove results")
-    game_results = input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: ")
-    # copy all the conents of the csv into a new csv
-    # while doing this, we constantly check for the condition
-    # when we encounter the game results to be removed, we don't copy that one
-    # the final game result with be written in the csv file
-    games_list =[]
-    with open(file_name, "r") as f:
-        reader = csv.reader(f)
-        for row in reader:
-            if game_results != row[0]:
-                games_list.append(row)
-    with open(file_name, "w") as f:
-        writer = csv.writer(f)
-        writer.writerows(games_list)
+    try:
+        game_results = int(input("Enter the GAME NUMBER for the RESULTS you want to REMOVE: "))
+    except ValueError:
+        print("Must be a number")
+        # copy all the contents of the csv into a new csv
+        # while doing this, we constantly check for the condition
+        # when we encounter the game results to be removed, we don't copy that one
+        # the final game result with be written in the csv file
+    try:    
+        games_list =[]
+        with open(file_name, "r") as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if game_results != row[0]:
+                    games_list.append(row)
+        with open(file_name, "w") as f:
+            writer = csv.writer(f)
+            writer.writerows(games_list)
+    except UnboundLocalError:
+        print("Must be a number that corresponds with the Game Number for the Game you want to delete.")
 
 
 # ************************************************************************************************************************************************************************************************
-# 7
+# 7 VIEW RESULTS
 # ************************************************************************************************************************************************************************************************
 
 def view_results(file_name):
