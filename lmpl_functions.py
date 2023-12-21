@@ -156,7 +156,7 @@ def team_draw():
 def enter_results(file_name):
     print("Let's enter the results of a game!")
     with open(file_name, "a") as f:
-            
+    
         try:    
             game_number = 0
             game_number =  int(input("Enter the Game Number: "))
@@ -167,23 +167,7 @@ def enter_results(file_name):
             print("Must be a number between 1 and 56")
             return
 
-
-        print(f"{teams[0]}")
-        print(f"{teams[1]}")
-        print(f"{teams[2]}")
-        print(f"{teams[3]}")
-        print(f"{teams[4]}")
-        print(f"{teams[5]}")
-        print(f"{teams[6]}")
-        print(f"{teams[7]}")
-
-    try:
-        home_team = input("\nEnter the Home Team: ")
-        home_goals = 0
-        home_goals = int(input("Enter the Home Team Goals: "))
-        # raise Exception("Please enter numbers only")
-    except: ValueError, print("Must be a Number")
-        
+    print("Type the name of the Home Team as you see it below.")
     print(f"{teams[0]}")
     print(f"{teams[1]}")
     print(f"{teams[2]}")
@@ -192,15 +176,59 @@ def enter_results(file_name):
     print(f"{teams[5]}")
     print(f"{teams[6]}")
     print(f"{teams[7]}")
-    try:
-        away_team = input("Enter the Away Team: ")
-        away_goals = 0
-        away_goals = int(input("Enter the Away Team Goals: "))
-    except: ValueError
-    print("Must be a Number")
-    # try:
+    home_team = input("\nEnter the Home Team: ")
+
+    home_goals = 0  # Initializing with an invalid value to enter the loop
+    while not (0 <= home_goals <= 99):
+        try:
+            home_goals = int(input("Enter a number between 1 and 99: "))
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+        
+    print("Type the name of the Away Team as you see it below.")
+    print(f"{teams[0]}")
+    print(f"{teams[1]}")
+    print(f"{teams[2]}")
+    print(f"{teams[3]}")
+    print(f"{teams[4]}")
+    print(f"{teams[5]}")
+    print(f"{teams[6]}")
+    print(f"{teams[7]}")
+    away_team = input("\nEnter the Home Team: ")
+
+
+    away_goals = 0  # Initializing with an invalid value to enter the loop
+    while not (0 <= away_goals <= 99):
+        try:
+            away_goals = int(input("Enter a number between 1 and 99: "))
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+
+
     writer = csv.writer(f)
     writer.writerow([game_number, home_team, home_goals, away_team, away_goals])
+   
+   
+   
+   
+   
+   
+   
+    # try:
+    #     away_team = input("Enter the Away Team: ")
+    #     away_goals = 0
+    #     away_goals = int(input("Enter the Away Team Goals: "))
+    # except: ValueError
+    # print("Must be a Number")
+   
+   
+    # try:
+    #     home_goals = 0
+    #     home_goals = int(input("Enter the Home Team Goals: "))
+    #     # raise Exception("Please enter numbers only")
+    # except: ValueError, print("Must be a Number")
+   
+   
     # except Exception:
     #     print("Something went wrong. Please try again")
 
