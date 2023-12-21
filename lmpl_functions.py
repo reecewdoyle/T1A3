@@ -167,42 +167,30 @@ def enter_results(file_name):
             print("Must be a number between 1 and 56")
             return
 
-    print("Type the name of the Home Team as you see it below.")
-    print(f"{teams[0]}")
-    print(f"{teams[1]}")
-    print(f"{teams[2]}")
-    print(f"{teams[3]}")
-    print(f"{teams[4]}")
-    print(f"{teams[5]}")
-    print(f"{teams[6]}")
-    print(f"{teams[7]}")
-    home_team = input("\nEnter the Home Team: ")
+        print("Type the name of the Home Team as you see it below.")
+        for team in teams:
+            print(f"{team}")
+        home_team = input("\nEnter the Home Team: ")
 
-    home_goals = 0  # Initializing with an invalid value to enter the loop
-    while not (0 <= home_goals <= 99):
-        try:
-            home_goals = int(input("Enter a number between 1 and 99: "))
-        except ValueError:
-            print("Invalid input. Please enter a valid integer.")
-        
-    print("Type the name of the Away Team as you see it below.")
-    print(f"{teams[0]}")
-    print(f"{teams[1]}")
-    print(f"{teams[2]}")
-    print(f"{teams[3]}")
-    print(f"{teams[4]}")
-    print(f"{teams[5]}")
-    print(f"{teams[6]}")
-    print(f"{teams[7]}")
-    away_team = input("\nEnter the Home Team: ")
+        home_goals = 0  # Initializing with an invalid value to enter the loop
+        while not (0 <= home_goals <= 99):
+            try:
+                home_goals = int(input("Enter a number between 1 and 99: "))
+            except ValueError:
+                print("Invalid input. Please enter a valid integer.")
+            
+        print("Type the name of the Away Team as you see it below.")
+        for team in teams:
+            print(f"{team}")
+        away_team = input("\nEnter the Home Team: ")
 
 
-    away_goals = 0  # Initializing with an invalid value to enter the loop
-    while not (0 <= away_goals <= 99):
-        try:
-            away_goals = int(input("Enter a number between 1 and 99: "))
-        except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+        away_goals = 0  # Initializing with an invalid value to enter the loop
+        while not (0 <= away_goals <= 99):
+            try:
+                away_goals = int(input("Enter a number between 1 and 99: "))
+            except ValueError:
+                print("Invalid input. Please enter a valid integer.")
 
 
     writer = csv.writer(f)
