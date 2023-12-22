@@ -13,6 +13,17 @@ teams = [f"{fore('white')}{back('red')}Belmont Bandits{attr('reset')}",
          f"{fore('white')}{back('22')}Swansea Silverbacks{attr('reset')}", 
          f"{fore('white')}{back('13')}Warners Bay Wanderers{attr('reset')}"]
 
+team_mascots = [f"{fore('white')}{back('red')}Bandits{attr('reset')}", 
+         f"{fore('white')}{back('blue')}Bulldogs{attr('reset')}", 
+         f"{fore('white')}{back('yellow')}Cobras{attr('reset')}", 
+         f"{fore('white')}{back('131')}Eagles{attr('reset')}", 
+         f"{fore('white')}{back('56')}Guardians{attr('reset')}", 
+         f"{fore('white')}{back('172')}Spartans{attr('reset')}", 
+         f"{fore('white')}{back('22')}Silverbacks{attr('reset')}", 
+         f"{fore('white')}{back('13')}Wanderers{attr('reset')}"]
+
+teams_uncoloured = ["Belmont Bandits", "Boolaroo Bulldogs", "Charlestown Cobras", "Eleebana Eagles", "Glendale Guardians", "Speers Point Spartans", "Swansea Silverbacks", "Warners Bay Wanderers"]
+
 # ************************************************************************************************************************************************************************************************
 # 1. - THIS YEAR'S TEAMS
 # ************************************************************************************************************************************************************************************************
@@ -120,12 +131,14 @@ def team_draw():
 def enter_results(file_name):
     view_results()
 
-    print("Let's enter the results of a game!")
+    print("\nLet's enter the results of a game!")
+    print("\nFirst we need the Unique Game Number. It will be a number from 1 to 56, and can only be used once.")
+    print("\nNOTE: Don't enter a game number that has already been used in the table above.\n")
     with open(file_name, "a") as f:
         game_number = int
         while((game_number != 0)):
             try:    
-                game_number =  int(input("Enter the Game Number(enter 0 to return to main menu): "))
+                game_number =  int(input("Enter the Game Number. (enter 0 to return to main menu): "))
                 if game_number not in range(1,57):
                     print("Must be a number between 1 and 56")
                 else:
@@ -134,27 +147,39 @@ def enter_results(file_name):
                 print("Must be a number between 1 and 56")
 
         if(game_number != 0):
+            # print("\nType the name of the Home Team as you see it below.")
+            # print()
+
+            print("\n")
+            print("Now we need to enter the MASCOT of the HOME TEAM")
+            print("Type the name of the MASCOT out, just as you see it below.")
+            print("NO SPACES, NUMBERS, or SPECIAL CHARACTERS")
+            print(team_mascots[0])
+            print(team_mascots[1])
+            print(team_mascots[2])
+            print(team_mascots[3])
+            print(team_mascots[4])
+            print(team_mascots[5])
+            print(team_mascots[6])
+            print(team_mascots[7])
             home_team_name = True
-            print("Type the name of the Home Team as you see it below.")
-            print()
-
-                
             while home_team_name == True: 
-                    for team in teams:
-                        print(f"{team}")
-                    home_team = input("\nEnter the Home Team:\n")
-                    invalidName = re.search("[^A-Za-z]+", home_team)
-
-                    if invalidName:
-                        print("No special characters will be accepted.")
-                    elif not home_team:
-                        print("You must type something in!")
-                    else:
-                        print("Accepted.")
-                        home_team = home_team.lower()
-                        home_team = home_team.title()
-                        n = False
-                        break
+                home_team = input("\nEnter the Home Team:\n")  
+                invalidName = re.search("[^A-Za-z]+", home_team)
+                
+                if invalidName:
+                    print("No special characters will be accepted.")
+                elif not home_team:
+                    print("You must type something in!")
+                else:
+                    print("\nAccepted.\n")
+                    home_team = home_team.lower()
+                    home_team = home_team.title()
+                    n = False
+                    break
+                        # print(teams_uncoloured[0])
+                        # for team in teams_uncoloured:
+                        #     print(f"{team}")
 
 
             home_goals = 0  
@@ -167,13 +192,25 @@ def enter_results(file_name):
 
         if(game_number != 0):
             away_team_name = True
-            print("Type the name of the Home Team as you see it below.")
-            print()
+            # print("Type the name of the Home Team as you see it below.")
+            # print()
 
-                
+            print("\nGreat! Now onto the AWAY TEAM\n")
+            # print("\n")
+            print("Enter the MASCOT of the AWAY TEAM")
+            print("Type the name of the MASCOT out, just as you see it below.")
+            print("NO SPACES, NUMBERS, or SPECIAL CHARACTERS")
+            print(team_mascots[0])
+            print(team_mascots[1])
+            print(team_mascots[2])
+            print(team_mascots[3])
+            print(team_mascots[4])
+            print(team_mascots[5])
+            print(team_mascots[6])
+            print(team_mascots[7])    
             while away_team_name == True: 
-                    for team in teams:
-                        print(f"{team}")
+                    # for team in teams:
+                    #     print(f"{team}")
                     away_team = input("\nEnter the Away Team:\n")
                     invalidName = re.search("[^A-Za-z]+",away_team)
 
@@ -182,17 +219,17 @@ def enter_results(file_name):
                     elif not away_team:
                         print("You must type something in!")
                     else:
-                        print("Accepted.")
+                        print("\nAccepted.\n")
                         away_team = away_team.lower()
                         away_team = away_team.title()
                         n = False
                         break
 
-
             # print("Type the name of the Away Team as you see it below.")
             # for team in teams:
             #     print(f"{team}")
             # away_team = input("\nEnter the Away Team: ")
+
 
 
             away_goals = 0  
@@ -322,3 +359,4 @@ def view_results():
     # with open("results.csv") as f:
     #     mytable = from_csv(f)
     # print(mytable)
+
