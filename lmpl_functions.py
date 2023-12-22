@@ -1,3 +1,4 @@
+import re
 import csv
 import datetime
 from colored import fore, back, attr
@@ -133,11 +134,28 @@ def enter_results(file_name):
                 print("Must be a number between 1 and 56")
 
         if(game_number != 0):
+            home_team_name = True
             print("Type the name of the Home Team as you see it below.")
-            for team in teams:
-                print(f"{team}")
-            home_team = input("\nEnter the Home Team: ")
+            print()
+
                 
+            while home_team_name == True: 
+                    for team in teams:
+                        print(f"{team}")
+                    home_team = input("\nEnter the Home Team:\n")
+                    invalidName = re.search("[^A-Za-z]+", home_team)
+
+                    if invalidName:
+                        print("No special characters will be accepted.")
+                    elif not home_team:
+                        print("You must type something in!")
+                    else:
+                        print("Accepted.")
+                        home_team = home_team.lower()
+                        home_team = home_team.title()
+                        n = False
+                        break
+
 
             home_goals = 0  
             while True:    
@@ -146,11 +164,35 @@ def enter_results(file_name):
                     break
                 except ValueError:
                     print("Invalid input. Please enter an integer.")
+
+        if(game_number != 0):
+            away_team_name = True
+            print("Type the name of the Home Team as you see it below.")
+            print()
+
                 
-            print("Type the name of the Away Team as you see it below.")
-            for team in teams:
-                print(f"{team}")
-            away_team = input("\nEnter the Away Team: ")
+            while away_team_name == True: 
+                    for team in teams:
+                        print(f"{team}")
+                    away_team = input("\nEnter the Away Team:\n")
+                    invalidName = re.search("[^A-Za-z]+",away_team)
+
+                    if invalidName:
+                        print("No special characters will be accepted.")
+                    elif not away_team:
+                        print("You must type something in!")
+                    else:
+                        print("Accepted.")
+                        away_team = away_team.lower()
+                        away_team = away_team.title()
+                        n = False
+                        break
+
+
+            # print("Type the name of the Away Team as you see it below.")
+            # for team in teams:
+            #     print(f"{team}")
+            # away_team = input("\nEnter the Away Team: ")
 
 
             away_goals = 0  
