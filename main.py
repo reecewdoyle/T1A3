@@ -38,14 +38,14 @@ def create_menu():
     print(f"{fore('blue')} Enter 6 to REMOVE the RESULTS from a game.  {attr('reset')}")
     print(f"{fore('blue')} Enter 7 to VIEW the RESULTS.  {attr('reset')}")
     print(f"{fore('blue')} Enter 8 to exit.\n")
-    choice = input(f"{fore('red')} {back('white')} Enter your selection:{attr('reset')}")
+    choice = input(f"{fore('red')} {back('16')} Enter your selection: {attr('reset')}" "")
     return choice
 
 users_choice = ""
 
 while users_choice != "8":
     users_choice = create_menu()
-    print(users_choice)
+    # print(users_choice)
     if (users_choice == "1"):
         print_teams()
     elif (users_choice == "2"):
