@@ -48,10 +48,12 @@ def print_this_round():
     from datetime import date
     # Show actual date
     my_date = datetime.date.today()
-    print(my_date)
+    today = date.today()
+    print(today.strftime(f"\nToday's date is %A %d %B %Y"))
+    # print(f"\n{my_date}\n")
     # Using isocalendar() function
     year, week_num, day_of_week = my_date.isocalendar()
-    print("Week #" + str(week_num))
+    print(f"\nIt is week #" + str(week_num) + " for the year\n")
     print("This week's games are: ")
     
     found_games = False  # Variable to track if any games are found
@@ -78,7 +80,7 @@ def print_this_round():
 # between 1 and 14. 
 
 def print_round():
-    print("There are 14 rounds in the LMPL Competition for this year.\n")
+    print("\nThere are 14 rounds in the LMPL Competition for this year.\n")
     print("Each team plays each other twice, once at Home, and once Away.\n")
     round_number = 0
     rounds = [
@@ -88,7 +90,7 @@ def print_round():
 
     while str(round_number) not in rounds:
         try:
-            round_number = int(input("Enter the round (1-14) you'd like to print:"))
+            round_number = int(input("Enter the round (1-14) you'd like to print: "))
             if str(round_number) in rounds:
                 with open("lmpl.csv", "r") as f:
                     reader = csv.reader(f)
@@ -175,11 +177,11 @@ def enter_results(file_name):
         if game_number != 0:
             print("\nNow we need to enter the MASCOT of the HOME TEAM")
             print("Type the name of the MASCOT out, just as you see it below.")
-            print("NO SPACES, NUMBERS, or SPECIAL CHARACTERS")
+            print("NO SPACES, NUMBERS, or SPECIAL CHARACTERS\n")
             print_team_mascots()
             home_team_name = True
             while home_team_name:
-                home_team = input("\nEnter the Home Team:\n")
+                home_team = input("\nEnter the Home Team: ")
                 invalid_name = re.search("[^A-Za-z]+", home_team)
 
                 if invalid_name:
@@ -206,10 +208,10 @@ def enter_results(file_name):
             print("\nGreat! Now onto the AWAY TEAM\n")
             print("Enter the MASCOT of the AWAY TEAM")
             print("Type the name of the MASCOT out, just as you see it below.")
-            print("NO SPACES, NUMBERS, or SPECIAL CHARACTERS")
+            print("NO SPACES, NUMBERS, or SPECIAL CHARACTERS\n")
             print_team_mascots()
             while away_team_name:
-                away_team = input("\nEnter the Away Team:\n")
+                away_team = input("\nEnter the Away Team: ")
                 invalid_name = re.search("[^A-Za-z]+", away_team)
 
                 if invalid_name:
@@ -251,7 +253,7 @@ def edit_results():
 
     while game_results != "0":
         view_results()
-        print("Remove results")
+        print("\n")
 
         try:
             games_list = []
@@ -292,7 +294,7 @@ def edit_results():
 # Prints the results in a nice table 
 
 def view_results():
-    print("Here are the results from the season so far")
+    print("\nHere are the results from the season so far: \n")
     with open("results.csv") as f:
         table = from_csv(f)
     print(table)   
