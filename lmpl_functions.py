@@ -88,12 +88,12 @@ def print_round():
 
     while str(round_number) not in rounds:
         try:
-            round_number = int(input("Enter the round (1-14) you'd like to print:\n"))
+            round_number = int(input("Enter the round (1-14) you'd like to print: "))
             if str(round_number) in rounds:
                 with open("lmpl.csv", "r") as f:
                     reader = csv.reader(f)
                     round_selected = rounds[round_number - 1]
-                    print(f"These are the games in Round {round_selected}\n")
+                    print(f"\nThese are the games in Round {round_selected}\n")
                     for row in reader:
                         try:
                             if row[1] == round_selected:
@@ -131,7 +131,7 @@ def team_draw():
         try:
             with open("lmpl.csv", "r") as f:
                 reader = csv.reader(f)
-                team_selection = int(input("\nTeam Number: \n"))
+                team_selection = int(input("\nTeam Number: "))
                 if(team_selection not in range(1,9)):
                     raise ValueError
                 team_draw = teams_menu[((team_selection) - 1)]
@@ -292,7 +292,7 @@ def edit_results():
 # Prints the results in a nice table 
 
 def view_results():
-    print("Here are the results from the season so far")
+    print("\nHere are the results from the season so far\n")
     with open("results.csv") as f:
         table = from_csv(f)
     print(table)   
