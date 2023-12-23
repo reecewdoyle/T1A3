@@ -65,5 +65,6 @@ while users_choice != "8":
     else:
         print("Invalid Input")
 
+# App Fareweall and Logo
 print(f"{fore('red')} {back('white')} Thank you for using the Lake Macquarie Premier League App!{attr('reset')}")
 text = pfg.print_figlet(text = "Thank You!\nFrom \nL . M . P . L", font = "standard", colors = "red")
