@@ -114,6 +114,7 @@ def print_round():
 # Game data should include Round, Home Team, Away Team, Game Number, Field, Time, Date, Day of the week.
 
 def team_draw():
+    print("\nPlease enter the number that corresponds to the team you want to see the draw for.\n")
     for _index, team  in enumerate(teams):
         print(f"{_index + 1}. {team}")
 
@@ -130,16 +131,16 @@ def team_draw():
         try:
             with open("lmpl.csv", "r") as f:
                 reader = csv.reader(f)
-                team_selection = int(input("Team Number: "))
+                team_selection = int(input("\nTeam Number: \n"))
                 if(team_selection not in range(1,9)):
                     raise ValueError
                 team_draw = teams_menu[((team_selection) - 1)]
-                print("This is the" + " " + team_draw + " " + "draw for this season.")
+                print("\nThis is the" + " " + team_draw + " " + "draw for this season.\n")
                 for row in reader:
                         if row[3] == team_draw or row[4] == team_draw:
                             print(f"Round {row[1]}, {row[3]} vs {row[4]}, {row[5]}, {row[6]}, {row[7]}\n")
                
-                team_selection = teams_menu[team_selection]
+                team_selection = teams_menu[((team_selection) - 1)]
 
         except ValueError:
             print("Must be a number between 1 and 8 which corresponds to the team.")
