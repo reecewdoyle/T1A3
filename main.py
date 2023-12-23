@@ -45,7 +45,6 @@ users_choice = ""
 
 while users_choice != "8":
     users_choice = create_menu()
-    # print(users_choice)
     if (users_choice == "1"):
         print_teams()
     elif (users_choice == "2"):
@@ -66,5 +65,7 @@ while users_choice != "8":
         print("Invalid Input")
 
 # App Fareweall and Logo
-print(f"{fore('red')} {back('white')} Thank you for using the Lake Macquarie Premier League App!{attr('reset')}")
+print("\n")       
+print(f"{fore('red')} {back('white')} Thank you for using the Lake Macquarie Premier League App! {attr('reset')}")
+print("\n")       
 text = pfg.print_figlet(text = "Thank You !\n\nL . M . P . L", font = "standard", colors = "red")
