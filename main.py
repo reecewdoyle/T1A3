@@ -1,12 +1,15 @@
 from colored import fore, back, attr
-from lmpl_functions import print_teams, print_this_round, print_round, team_draw, enter_results, edit_results, view_results
+from lmpl_functions import (
+    print_teams, print_this_round, print_round, team_draw,
+    enter_results, edit_results, view_results
+)
 import pyfiglet as pfg
 import csv
 
-# App Greeting
-
+# App Logo
 text = pfg.print_figlet(text = "Lake Macquarie Premier League", font = "standard", colors = "red")
 
+# App Greeting
 print(f"{fore('red')}{back('white')} Welcome to the Lake Macquarie Premier League App for 23/24!{attr('reset')}\n")
 
 file_name = "results.csv"
@@ -34,8 +37,7 @@ def create_menu():
     print(f"{fore('blue')} Enter 5 to ENTER the RESULTS from a game.  {attr('reset')}")
     print(f"{fore('blue')} Enter 6 to REMOVE the RESULTS from a game.  {attr('reset')}")
     print(f"{fore('blue')} Enter 7 to VIEW the RESULTS.  {attr('reset')}")
-    print(f"{fore('blue')} Enter 8 to exit.")
-    print("\n")
+    print(f"{fore('blue')} Enter 8 to exit.\n")
     choice = input(f"{fore('red')} {back('white')} Enter your selection:{attr('reset')}")
     return choice
 
@@ -64,11 +66,4 @@ while users_choice != "8":
         print("Invalid Input")
 
 print(f"{fore('red')} {back('white')} Thank you for using the Lake Macquarie Premier League App!{attr('reset')}")
-
-
-
-# 5. Enter Results
-    # 1. Game number
-        # Home Team Goals
-        # Away Team Goals
-        
+text = pfg.print_figlet(text = "Thank You!\nFrom \nL . M . P . L", font = "standard", colors = "red")
