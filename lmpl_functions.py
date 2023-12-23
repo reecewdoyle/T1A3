@@ -88,7 +88,7 @@ def print_round():
 
     while str(round_number) not in rounds:
         try:
-            round_number = int(input("Enter the round (1-14) you'd like to print: "))
+            round_number = int(input("Enter the round (1-14) you'd like to print:"))
             if str(round_number) in rounds:
                 with open("lmpl.csv", "r") as f:
                     reader = csv.reader(f)
@@ -292,7 +292,7 @@ def edit_results():
 # Prints the results in a nice table 
 
 def view_results():
-    print("\nHere are the results from the season so far\n")
+    print("Here are the results from the season so far")
     with open("results.csv") as f:
         table = from_csv(f)
     print(table)   
